@@ -1,0 +1,90 @@
+page{
+  background: #F3F4F8;
+}
+.tuidetail{
+  min-height: 100%;
+  background: #F3F4F8;
+}
+.tuidetailtit{
+  height: 100rpx;
+  background: #CF271B;
+  color: #fff;
+  padding:40rpx 52rpx; 
+}
+.tuidetailtit view:nth-child(1){
+  font-size: 32rpx;
+}
+.tuidetailtit view:nth-child(2){
+  font-size: 30rpx;
+}
+.tuidetailtit view:nth-child(2) text{
+  float: right;
+
+  font-size: 30rpx;
+}
+.tuidetailtit view:nth-child(2) text{
+  float: right;
+}
+.tuipro{
+  height: 250rpx;
+  width: 80%;
+  padding: 40rpx;
+  margin: 0 auto;
+  background: #fff;
+  margin-top: 40rpx;
+  color: #a5a5a5;
+}
+.tuiprotit{
+  color: #CF271B;
+  font-size: 32rpx;
+}
+.tuiprocon{
+  margin-top: 20rpx;
+}
+.tuilist{
+  height:30rpx;
+  line-height:30rpx;
+
+}
+.tuilista{
+  height:30rpx;
+  line-height:30rpx;
+  border-left:2px solid #ccc;
+margin-left:15rpx;
+
+}
+.tuilist icon{
+  float:left;
+font-size:34rpx;
+/* color:#A5A5A5; */
+margin-top:-11rpx;
+height:30rpx;
+
+}
+.tuilist text{
+  float: left;
+  font-size: 26rpx;
+  /* color: #A5A5A5; */
+  margin-left: 10rpx;
+}
+.tuixi{
+  height: 400rpx;
+  width: 80%;
+  padding: 40rpx;
+  margin: 0 auto;
+  background: #fff;
+  margin-top: 40rpx;
+}
+.tuixitit{
+  color: #CF271B;
+  font-size: 32rpx;
+}
+.tuixicon{
+  margin-top: 20rpx;
+}
+.tuixilist{
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #6A6A6A;
+  font-size: 26rpx;
+}

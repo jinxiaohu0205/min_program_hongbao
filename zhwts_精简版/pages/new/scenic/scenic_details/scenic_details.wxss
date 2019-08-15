@@ -1,0 +1,8 @@
+/* pages/news-hongbao/scenic/scenic_details/scenic_details.wxss */
+@import "../../../../wxParse/wxParse.wxss";
+.contenter text:nth-child(1){
+  display: none;
+}
+.tab_bar_bottom{
+  border-bottom:4rpx solid #CF271B;
+}

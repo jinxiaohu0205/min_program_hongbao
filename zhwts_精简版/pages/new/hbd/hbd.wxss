@@ -1,0 +1,158 @@
+/* pages/news-hongbao/hongbao_details/hongbao_details.wxss */
+.redpackage{
+  width: 100%;
+  height: 100%;
+  background: #FFEEDB;
+}
+.redpackage .top_back{
+  width: 96%;
+  height: 870rpx;
+  position: absolute;
+  top: 20rpx;left: 2%;
+}
+.top_section{
+  width: 96%;
+  height: 810rpx;
+  position: absolute;
+  top: 80rpx;left: 2%;
+}
+.headimg{
+  width: 147rpx;
+  height: 120rpx;
+  margin: 0 auto;
+  border-radius: 10rpx;
+}
+.content view{
+  text-align: center;
+}
+.coupon{
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 70rpx;
+  overflow: hidden;
+  background: #FFF;
+  box-sizing: border-box;
+  border-radius:20rpx; 
+  position: relative;
+}
+.yin1{
+  position: absolute;
+  top: -10rpx;
+  left: 476rpx;
+  width: 20rpx;
+  height: 20rpx;
+  background: #CF271B;
+  border-radius:50%; 
+}
+.yin2{
+  position: absolute;
+  bottom: -10rpx;
+  left: 476rpx;
+  width: 20rpx;
+  height:20rpx;
+  background: #CF271B;
+  border-radius:50%; 
+}
+.coupon_img{
+  float: left;
+  width: 190rpx;
+  height:150rpx;
+  margin-left:20rpx; 
+  margin-top:25rpx;
+  border-radius:10rpx;
+}
+.coupon_text{
+  float: left;
+  margin-left:10rpx;
+  width: 238rpx;
+  height: 160rpx;
+  padding: 20rpx 0;
+}
+.coupon_text view{
+  text-align: left;
+}
+.coupon_button{
+  float: left;
+  height:200rpx;
+  margin-left: 20rpx;
+  border-left:2rpx dashed #B5B5B5; 
+  text-align: center;
+  width: 180rpx;
+  padding:20rpx 0;
+
+}
+.coupon_button .button{
+  width: 120rpx;
+  height: 40rpx;
+  display: inline-block;
+  border: none;
+  margin: 0 auto;
+  background: #F58604;
+  color: #FFF;
+  font-size: 24rpx;
+  border-radius: 6rpx;
+  padding: 5rpx;
+}
+.rece{
+  background:#FFEEDB;
+  padding: 24rpx 20rpx;
+}
+.number{
+  padding:30rpx 40rpx; 
+  background: #fff;
+  border-radius: 10rpx;
+  align-items:center;
+}
+.user_img image{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  margin-right: 15rpx;
+}
+.comment_list{
+  padding: 0 25rpx;
+  background: #FFEEDB;
+  margin-bottom:150rpx;
+
+}
+.conmment_item{
+  padding: 30rpx 0;
+  background: #FFF;
+  border-radius:10rpx; 
+  margin-bottom:20rpx; 
+  border-bottom: 1rpx solid #DCDCDC;
+}
+.conmment_item:last-child{
+  border: none;
+}
+.usimg{
+  width: 108rpx;
+  height: 108rpx;
+  border-radius: 50%;
+  margin-right: 18rpx;
+}
+.rights{
+  width: 557rpx;
+}
+.comm_box{
+  padding: 21rpx 28rpx;
+}
+.comm_box input{
+  width: 500rpx;
+  height: 60rpx;
+  border: none;
+  font-size: 28rpx;
+  color: #B6B6B6;
+  padding: 0 28rpx;
+  background: #F2F2F2;
+}
+.comm_box .btn{
+  width: 130rpx;
+  height: 60rpx;
+  background: #CF271B;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 60rpx;
+  margin-left:20rpx; 
+}

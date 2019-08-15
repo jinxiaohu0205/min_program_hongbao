@@ -1,0 +1,12 @@
+<!--pages/news-hongbao/find_details/find_details.wxml-->
+<import src="../../../wxParse/wxParse.wxml"/>
+<view class='container' style='padding:10rpx 30rpx;'>
+    <view class='wts-font-19rpx' style='color:#121212;font-weight:bold'>{{title}}</view>
+    <view class='flex flex-row justify-between wts-font-12' style='color:#989898;margin-top:20rpx;margin-bottom:20rpx;'>
+      <view>{{create_time}}</view>
+      <view>{{hits}}人看过</view>
+    </view>
+    <view class="wts-100 wts-background wts-box-sizing contenter" style='overflow:hidden;'>
+      <template is="wxParse" data="{{wxParseData:contents.nodes}}"/>
+    </view>
+</view>

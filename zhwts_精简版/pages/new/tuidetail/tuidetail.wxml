@@ -1,0 +1,35 @@
+<view class="tuidetail">
+  <view class='tuidetailtit'>
+    <view>申请退款总金额</view>
+    <view>￥{{refund_amount}} <text>共{{count}}笔</text></view>
+  </view>
+  <view class='tuipro'>
+    <view class='tuiprotit'>退款进度</view>
+    <view class='tuiprocon'>
+      <view class='tuilist' style='color:{{refund_type>=1?"#D3483A":""}}'>
+        <icon class='iconfont icon-pay-order'></icon>
+        <text>退款申请</text>
+      </view>
+      <view class='tuilista'style='border-left-color:{{refund_type>=2?"#D3483A":""}}'></view>
+      <view class='tuilist' style='color:{{refund_type>=2?"#D3483A":""}}'>
+        <icon class='iconfont icon-pay-order'></icon>
+        <text>退款审核</text>
+      </view>
+      <view class='tuilista' style='border-left-color:{{refund_type>=3?"#D3483A":""}}'></view>
+      <view class='tuilist' style='color:{{refund_type>=3?"#D3483A":""}}'>
+        <icon class='iconfont icon-pay-order'></icon>
+        <text>退款成功,预计1-7个工作日内完成</text>
+      </view>
+    </view>
+  </view>
+  <view class='tuixi'>
+    <view class='tuixitit'>退款明细</view>
+    <view class='tuixicon'>
+      <view class='tuixilist'>订　单名：{{order_name}}</view>
+      <view class='tuixilist'>订　单号： {{order_code}}</view>
+      <view class='tuixilist'>退款原因：{{reason}}</view>
+      <view class='tuixilist'>实付金额：￥{{total_fee}}</view>
+      <view class='tuixilist'>实退金额：￥{{refund_amount}}</view>
+    </view>
+  </view>
+</view>

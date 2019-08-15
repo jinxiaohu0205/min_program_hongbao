@@ -1,0 +1,10 @@
+/* pages/news-hongbao/me/wenti/wenti.wxss */
+page{
+  background:#F3F4F8;
+}
+.head{
+  color: #181818;
+  font-weight: bold;
+  font-size: 42rpx;
+  line-height: 112rpx;
+}

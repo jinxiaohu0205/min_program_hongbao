@@ -1,0 +1,181 @@
+<!--pages/news-hongbao/scenic/scenic_fill/scenic_fill.wxml-->
+<view class="container">
+  <!--头部-->
+  <view class="wts-overflow wts-padding" style="padding:15px;background:#CF271B;">
+    <view class='wts-background' style='border-radius:15rpx;padding:15px;'>
+       <view class="wts-line-height30 wts-font-19" style='padding:4rpx;'>
+        {{name}}
+      </view>
+      <view class="wts-line-height20 wts-font-13" style='padding:4rpx;color:#CF271B'>
+        {{prompt}}
+      </view>
+      <view class="wts-line-height20 wts-font-13 wts-6D6D6D" style='padding:4rpx;' wx-if="{{deadline}}">
+        请在游玩当日{{deadline}}前预订
+      </view>
+    </view>
+  </view>
+  <!--列表-->
+  <view class="wts-background wts-line-height wts-box-sizing wts-padding-lr wts-font-14">
+    <view class="wts-overflow section wts-bottom1">
+      <picker mode="date" value="{{date}}" start="{{date_start}}" end="{{end_start}}" bindchange="bindDateChange">
+        <view class="picker  flex justify-between">
+          <view>选择日期</view>
+          <view>{{date}}</view>
+          <view class="iconfont icon-arrow wts-c2c2c2"></view>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='wts-overflow wts-padding-lr'>
+   <!-- wx:if="{{is_indexId != 5}}" -->
+    <view wx:for="{{carts}}" wx:key="cid" wx-if="{{item.enable==1}}" class="wts-overflow wts-bottom1 wts-background wts-font-14" data-title="{{item.title}}">
+      <view class="wts-40 wts-float-left wts-line-height">
+        {{item.name}}
+      </view>
+      <view class="wts-20 wts-float-left wts-line-height">
+        {{item.price}}
+      </view>
+      <view class="wts-padding" style="width:212rpx;height:56rpx;line-height:56rpx;float:right;border-radius:10rpx;margin-top:12rpx;overflow:hidden;border:2rpx solid #F3F3F3;">
+        <text class="wts-text-center" style="height:56rpx;border-radius:10rpx 0 0 10rpx;line-height:56rpx;font-weight:bold;font-size:36rpx;color:#989898;float:left;border-right:2rpx solid #F3F3F3;background:#F3F3F3;width:60rpx" data-index="{{index}}" bindtap="bindMinus">-</text>
+        <input type="number" class="wts-text-center" style="height:56rpx;font-size:28rpx;background:#FFF;color:#333333;float:left;width:84rpx" bindinput="bindManual" data-index="{{index}}" value="{{item.num}}" maxlength="3"/>
+        <text class="wts-text-center normal" style="height:56rpx;border-radius:0 10rpx 10rpx 0;font-weight:bold;background:#F3F3F3;line-height:56rpx;font-size:36rpx;color:#E42F1E;float:left;border-left:2rpx solid #F3F3F3;width:60rpx" data-index="{{index}}" bindtap="bindPlus">+</text>
+      </view>
+    </view>
+  </view>
+  <view wx-if="{{id=='751ED38B-9EA2-1F78-3FC5-E779CDB0CCC6'}}" style="width:100%;line-height:80rpx;background:#FFF;text-align:center;font-size:30rpx;color:#323232">东台+南台+北台+中台+西台=大朝台</view>
+  <!--联系人信息-->
+  <view class='wts-overflow wts-padding-lr' style='background:#EEEEEE;'>
+    <view class="wts-line-height wts-overflow wts-bottom1 wts-padding wts-font-14">
+      <view class="wts-90 wts-float-left">
+        联系人信息
+      </view>
+      <view class="wts-10 wts-float-left wts-text-right iconfont icon-xiangyou"></view>
+    </view>
+  </view>
+  <view class='wts-overflow wts-padding-lr'>
+    <view class="wts-line-height wts-overflow wts-bottom1 wts-background wts-padding wts-font-14">
+      <view class="wts-25 wts-float-left">
+        姓名
+      </view>
+      <view class="wts-75 wts-float-left">
+        <input focus="{{nickname_focus}}" type="text" bindinput="bindInput" placeholder="请输入您的名字" id="nickname" value='{{nickname}}' style="width:100%;height:80rpx;" />
+      </view>
+    </view>
+  </view>
+
+  <view class='wts-overflow wts-padding-lr'>
+    <view class="wts-line-height wts-overflow wts-bottom1 wts-background wts-padding wts-font-14">
+      <view class="wts-25 wts-float-left">
+        手机号
+      </view>
+      <view class="wts-75 wts-float-left">
+        <input focus="{{phone_focus}}" type="number" bindinput="bindInput" id="phone" value='{{phone}}' placeholder="请输入您的手机号" style="width:100%;height:80rpx;" />
+      </view>
+    </view>
+  </view>
+  <view class="wts-100 wts-line-height wts-overflow wts-background wts-padding wts-padding-lr wts-font-14">
+    <view class="wts-25 wts-float-left">
+      备注
+    </view>
+    <view class="wts-75 wts-float-left">
+      <input focus="{{remark_focus}}" bindinput="bindInput" type="text" id="remark" placeholder="请添加备注" value='{{remark}}' style="width:100%;height:80rpx;" />
+    </view>
+  </view>
+  <view class='wts-overflow wts-padding-lr' style='background:#EEEEEE;'>
+    <view class="wts-line-height wts-overflow wts-bottom1 wts-padding wts-font-14">
+      <view class="wts-float-left">
+        将通过短信的方式发送验证码到您的手机
+      </view>
+    </view>
+  </view>
+
+  <view class='wts-overflow wts-padding-lr' id='kefu' bindtap='bindCall'>
+    <view class="wts-line-height wts-overflow wts-bottom1 wts-background wts-padding wts-font-14 justify-between">
+      <view class=" wts-float-left">
+        如需发票请联系客服：400-0350-577
+      </view>
+      <view class=" wts-float-left">
+        <view class=" iconfont icon-weibiaoti- wts-font-18 wts-c2c2c2"></view>
+      </view>
+    </view>
+  </view>
+  <view class='wts-100' style='height:13rpx;background:#EEEEEE;'>
+  </view>
+  <view class='flex justify-between align-center wts-box-sizing wts-background wts-line-height wts-padding-lr wts-666 wts-font-15 wts-margin20 wts-bottom1' style='color:#323232' wx:if="{{hongbaoShow1}}">
+    <view class='wts-line-height'>使用红包优惠券</view>
+    <view class='wts-line-height' catchtap='bindnav'>点击选择优惠券 ></view>
+  </view>
+  <view style='width:750rpx;padding:20rpx;box-sizing:border-box;background:#EEEEEE;position:relative' wx:if="{{hongbaoShow}}">
+    <view style='width:670rpx;background:#FFF;overflow:hidden;padding:20rpx;border-radius:10rpx;'>
+      <image src='{{hongbao.image}}' style='float:left;width:200rpx;height:160rpx;border-radius:10rpx;'></image>
+      <view style='float:left;width:240rpx;height:80rpx;margin:0 20rpx;'>                               
+        <view style='line-height:40rpx;height:40rpx;font-size:30rpx;color:#CF271B'>{{quanname}}</view>
+        <view style='line-height:40rpx;height:60rpx;margin-bottom:10rpx;font-size:24rpx;line-height:30rpx;color:#292929;overflow:hidden'>{{hongbao.suit_name}}</view>
+        <view style='color:#CF271B;height:32rpx;line-height:32rpx;width:104rpx;border:1px solid #CF271B;border-radius:16rpx;display:inline-block;font-size:24rpx;text-align:center;float:left'>优惠{{buy_limit}}张</view>
+      </view>
+      <view style='float:left;margin-left:20rpx;width:170rpx;text-align:center;margin-top:{{desc?"0":"40rpx"}}'>
+        <view style='height:50rpx;line-hight:50rpx;'>{{money}}{{detaileType}}</view>
+        <view style='font-size:24rpx;border-radius:10rpx;width:120rpx;margin:10rpx auto;text-align:center;height:40rpx;line-height:40rpx;color:#FFF;background:#F58604'>可使用</view>
+        <view wx-if="{{desc}}" class='wts-font-12'>{{desc}}</view>
+      </view>
+      <image src='../../img/shu.png' style='width:30rpx;height:250rpx;position:absolute;top:20rpx;left:500rpx;'></image>
+      <view style='margin-left:10rpx;width:450rpx;color:#A4A4A4;height:50rpx;line-height:50rpx;clear:both;font-size:24rpx;'>{{hongbaoStartTime}}至{{hongbaoEndTime}}</view>
+    </view>
+  </view>
+  <!-- <view class='wts-overflow wts-padding-lr'>
+    <view class="wts-line-height wts-overflow wts-bottom1 wts-background wts-padding wts-font-14 justify-between">
+      <view class="">
+        其他服务
+      </view>
+      <view class="">
+        <view class="iconfont icon-jiantouarrow486 wts-c2c2c2 wts-font-18"></view>
+      </view>
+    </view>
+  </view> -->
+  <!-- 报销票据抬头 -->
+  <!-- <view class='wts-overflow wts-padding-lr'>
+    <view wx:if="{{is_invoices=='1'}}" style='margin-top:20rpx;'>
+      <view class="wts-line-height justify-between wts-overflow wts-bottom1 wts-background wts-padding wts-font-14">
+        <view class="wts-40">
+          报销票据抬头
+        </view>
+        <view class='wts-60 justify-around'>
+          <view bindtap='bindInvoices_type' data-id='1'><text style='color:{{invoices_type=="1"?"red":""}}'>个人</text> <text class="wts-10 iconfont icon-xianshi_xuanzetianchong  wts-d3483a" style='margin-left:10rpx;width:20rpx;height:20rpx;font-size:36rpx;color:{{invoices_type=="1"?"#CF271B":"#c2c2c2"}}'></text></view>
+          <view bindtap='bindInvoices_type' data-id='2'><text style='color:{{invoices_type=="2"?"red":""}}'>单位</text><text class="wts-10 iconfont icon-xianshi_xuanzetianchong wts-d3483a" style='margin-left:10rpx;width:20rpx;height:20rpx;font-size:36rpx;color:{{invoices_type=="2"?"#CF271B":"#c2c2c2"}}'></text></view>
+        </view>
+      </view>
+      <view class="wts-line-height wts-overflow wts-bottom1 wts-background wts-padding wts-padding-lr wts-font-14">
+        <view class="wts-25 wts-float-left">
+          {{invoices_type=='1'?'个人姓名':'单位名称'}}
+        </view>
+        <view class="wts-75 wts-float-left">
+          <input focus="{{invoices_name_focus}}" type="text" bindinput="bindInput" placeholder="{{invoices_type=='1'?'请输入个人姓名':'请输入单位名称'}}" id="invoices_name" style="width:100%;height:80rpx;"/>
+        </view>
+      </view>
+    </view>
+  </view> -->
+  <view class='wts-padding-10 wts-box-sizing wts-margin20' style='background:#EEEEEE;line-height:56rpx;'>
+    <view>
+      <view class='wts-font-13' style='color:#323232;'>景点预订须知</view>
+      <view class='wts-font-12' style='color:#717070;'>【预订须知】</view>
+      <view class='wts-font-12' style='color:#717070;'>智慧五台山会根据您的付款方式进行订单全款扣除和预授权限定，如订单不确认将解除预授权或全额退款至您的支付账户</view>
+    </view>
+    <view class='flex justify-start'>
+      <view class="iconfont icon-xianshi_xuanzetianchong {{is_xuanze?'bluecolor':'graycolor'}} wts-font-18" bindtap='bindXuanze' style='margin-right:15rpx;'></view>
+      <view class='wts-font-15' style='color:#323232'>
+        同意《
+        <navigator url='/pages/agreement/agreement?tag=ticketagreement' class='wts-inline'>票务协议</navigator>》
+        </view>
+    </view>
+  </view>
+  <view style='height:110rpx;'></view>
+  <!--按钮-->
+  <view class='wts-100 wts-fixed wts-background justify-between wts-line-height60 wts-box-sizing wts-top' style='bottom:0;height:100rpx;z-index:9;'>
+  <view class='wts-eb6100 wts-font-17 wts-50' style='padding-left:30rpx'>
+    <view class="totalmoney">¥{{total}}<text style='font-size:24rpx;color:#666666;margin-left:10rpx;text-decoration:line-through;'> {{amounts}} </text></view>
+    <view class="youmoney">已优惠￥{{youmoney}}</view>
+  </view>
+  <button class='pay wts-50' bindtap='bindOrder'>去支付</button>
+</view>
+  <!--end-->
+</view>

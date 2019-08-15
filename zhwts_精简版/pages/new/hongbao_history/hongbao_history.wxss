@@ -1,0 +1,44 @@
+/* pages/news-hongbao/hongbao_history/hongbao_history.wxss */
+.box{
+  padding: 0 20rpx;
+}
+.redb{
+  margin-top: 20rpx;
+  background-size: 100% 100%;
+}
+.redb .bus{
+  width: 137rpx;
+  height: 110rpx;
+  border-radius: 5rpx;
+  margin: 0 auto;
+  /* top: 55rpx; */
+  background-size: 100% 100%;
+}
+.comment_list{
+  padding: 0 25rpx;
+  background: #fff;
+}
+.conmment_item{
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #DCDCDC;
+  height: 100rpx;
+}
+.conmment_item:last-child{
+  border: none;
+}
+.usimg{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  margin-right: 18rpx;
+  float: left
+}
+.rights{
+  /* width: 290rpx; */
+  /* margin-right: 100rpx; */
+  float: left
+}
+.conmment_content{
+  line-height: 108rpx;
+  float: right;
+}

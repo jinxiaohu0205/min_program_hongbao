@@ -1,0 +1,68 @@
+<view class="tuibox">
+  <view class='tuitit'>您有1个订单可申请退款</view>
+  <view class='tuicon' wx:if="{{type!='hotel_order_detail'}}">
+    <view class='tuicontit' style='color:#A5A5A5;background:#F3F4F8'>
+      <view style='width:35%'>票种</view>
+      <view style='width:25%'>付款金额</view>
+      <view style='width:25%'>可退金额</view>
+      <view style='width:15%'></view>
+    </view>
+    <view class='tuicontit' wx:for="{{piaoarr}}" wx:key="index" data-item="{{item}}" style='border-bottom:1px solid #F3F4F8;height:100rpx;line-height:88rpx' >
+      <view style='width:35%'>{{item.name}}</view>
+      <view style='width:25%'>￥{{item.oldamount}}</view>
+      <view style='width:25%;color:#D61414'>￥{{item.amount}}</view>
+      <view class="iconfont icon-xianshi_xuanzetianchong {{item.ischecked?'bluecolor':'graycolor'}} wts-font-18" style='width:10%' bindtap='checkedb' data-item="{{item}}" data-index="{{index}}" wx-if="{{!item.refund_id}}">
+      </view>
+      <view class='iconfont icon-guanbi wts-font-18' style='width:10%' bindtap='show' wx:else></view>
+    </view>
+    <view class='tuimoney'>
+      退款总额
+      <text>￥{{piaoamount}}</text>
+    </view>
+    <view style='color:red;font-size:26rpx;'>因天气等非自身原因造成的无法上山，请联系客服全额退款：<text bindtap='call'>400-0350-577</text></view>
+  </view>
+
+  <view class='tuicon' wx:if="{{type=='hotel_order_detail'}}">
+    <view class='tuicontit' style='color:#A5A5A5;background:#F3F4F8'>
+      <view style='width:25%;overflow:hidden'>名字</view>
+      <view style='width:25%'>日期</view>
+      <view style='width:20%'>付款金额</view>
+      <view style='width:20%'>可退金额</view>
+      <view style='width:10%'></view>
+    </view>
+    <view class='tuicontit' wx:for="{{piaoarr}}" wx:key="index" data-item="{{item}}" style='border-bottom:1px solid #bfbfbf;height:100rpx;line-height:88rpx' >
+      <view style='width:25%;overflow:hidden'>{{item.name}}</view>
+      <view style='width:25%'>{{item.date}}</view>
+      <view style='width:20%'>￥{{item.oldamount}}</view>
+      <view style='width:20%;color:#D61414'>￥{{item.amount}}</view>
+      <view class="iconfont icon-xianshi_xuanzetianchong {{item.ischecked?'bluecolor':'graycolor'}} wts-font-18" style='width:10%' bindtap='checkedaa' data-item="{{item}}" data-index="{{index}}" wx-if="{{!item.refund_id}}">
+      </view>
+      <view class='iconfont icon-guanbi wts-font-18' style='width:10%' bindtap='show' wx:else></view>
+    </view>
+    <view class='tuimoney'>
+      退款总额
+      <text>￥{{piaoamount}}</text>
+    </view>
+    <view style='color:red;font-size:26rpx;'>因天气等非自身原因造成的无法上山，请联系客服全额退款：<text bindtap='call'>400-0350-577</text></view>
+  </view>
+  <view wx-if="{{isshow}}" style='width:500rpx;height:200rpx;position:fixed;top:200rpx;left:50%;margin-left:-250rpx;'>
+    aaaaa 
+  </view>
+  <view class='tuibeca'>
+    <view class='tuibecatit'>退款原因</view>
+    <radio-group class="item-right radio-group">
+      <label class="becalist" wx:for="{{items}}" wx:key="index" bindtap='checkeda' data-item="{{item}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}" color='#CF271B'  />{{item.name}}
+      </label>
+     </radio-group>
+    <view class='beizhu'>
+      <text>备注：</text>
+      <input placeholder='请输入退款原因' type="text" bindinput="bindTextAreaBlur" value='{{reasonmark}}' />
+    </view>
+  </view>
+
+  <view class='tuibutton'>
+    <view style='background:#FFF'>实退总额 <text style='color:#D61414;'>￥{{piaoamount}}</text></view>
+    <view bindtap='tishen'>提交申请</view>
+  </view>
+</view>

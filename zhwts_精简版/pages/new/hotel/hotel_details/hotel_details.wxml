@@ -1,0 +1,116 @@
+<view class='container' style='background:#ededf0;'>
+  <image style='height:370rpx;width:100%;overflow:visible' src='{{image}}'></image>
+  <view style='height:116rpx;width:700rpx;margin:0 auto;margin-top:-58rpx;background:#FFFFFF;border-radius:5rpx;box-sizing:border-box;padding:20rpx;'>
+    <view style="color:#282828;font-weight:500;width:400rpx;overflow:hidden;white-space: nowrap;text-overflow:ellipsis;font-size:40rpx;float:left;line-height:76rpx">{{name}}</view>
+    <view style="float:right" bindtap='call'>
+      <image src='../../img/dianhua.png' style='width:40rpx;height:30rpx;margin-right:16rpx;float:left;margin-top:23rpx;'></image>
+      <view style="color:#4A4843;line-height:76rpx;float:left">{{tel}}</view>
+    </view>
+  </view>
+  <view class='hotelDetail'>
+    <view class='hotelDetail1'>酒店介绍<view bindtap='toGo' style='float:right;display:inline-block;width:176rpx;height:52rpx;background:#CF271B;border-radius:10rpx;color:#FFF;text-align:center;line-height:52rpx;'><image src='../../img/daohang.png' style='width:30rpx;height:30rpx;float:left;margin-top:11rpx;margin-left:11rpx;'></image>导航到店</view></view>
+    <view class='hotelDetail2'>开业时间：{{open_year}}</view>
+    <view class='hotelDetail3'>装修时间：{{open_year}}</view>
+    <view class='hotelDetail4' bindtap='introShowBtn'>酒店详细></view>
+  </view>
+
+  <view wx:if="{{introShow}}" style='width:100%;height:100%;position:fixed;top:0;left:0;z-index:1000;background:#FFF;'>
+    <view style='width:80%;height:500rpx;;margin:50rpx auto;'>
+      <rich-text nodes="{{intro}}"></rich-text>
+    </view>
+    <image bindtap='close' src='../../img/chacha.png' style='position:absolute;left:50%;bottom:100rpx;margin-left:-30rpx;width:60rpx;height:60rpx;'></image>
+  </view>
+  
+  <navigator url="../hotel_intro/hotel_intro?id={{hotel_id}}" class="" style='width:100%;padding:0 40rpx;box-sizing: border-box;margin-top:10rpx;margin-bottom:10rpx;height:204rpx;background:#FFF' hover-class="none">
+        <view style='padding:16rpx 0;font-size:28rpx;color: #444444;'>
+          设施服务
+        </view>
+        <view class='shecon'>
+          <view class='sheconlist'>
+            <icon class='iconfont icon-wuxianwangluo'></icon>
+            <text>无线</text>
+          </view>
+          <view class='sheconlist'>
+            <icon class='iconfont icon-dianshi'></icon>
+            <text>电视</text>
+          </view>
+          <view class='sheconlist'>
+            <icon class='iconfont icon-chuifengji1'></icon>
+            <text>吹风机</text>
+          </view>
+          <view class='sheconlist'>
+            <icon class='iconfont icon-yagaoyashua'></icon>
+            <text>洗漱用品</text>
+          </view>
+          <view class='sheconlist'>
+            <text style=' width:60rpx;height:60rpx;line-height:60rpx;font-size:32rpx;margin:10rpx auto;border-radius:50%;background:#CF271B;color:#FFF'>+5</text>
+            <text>全部</text>
+          </view>
+        </view>
+  </navigator>
+
+
+
+  <view bindtap='dianji' style='width:100%;padding:0 40rpx;box-sizing: border-box;height:120rpx;background:#FFF;'>
+    <view style='width:25%;height:120rpx;float:left;text-align:center'>
+      <view style='color:#7D7D7D;font-size:20rpx;line-height:60rpx;'>入住</view>
+      <view style='color:#282828;font-size:28rpx;'>{{startdate}}</view>
+    </view>
+    <view style='width:50%;height:120rpx;float:left;text-align:center'>
+      <image src='../../img/gang.png' style='width:40%;height:10rpx;margin-top:55rpx;float:left;'></image>
+      <view style='width:20%;height:120rpx;float:left;color:#CF271B;font-size:38rpx;line-height:120rpx;'>{{day}}晚</view>
+      <image src='../../img/gang1.png' style='width:40%;height:10rpx;margin-top:55rpx;float:left;'></image>
+    </view>
+    <view style='width:25%;height:120rpx;float:left;text-align:center'>
+      <view style='color:#7D7D7D;font-size:20rpx;line-height:60rpx;'>离店</view>
+      <view style='color:#282828;font-size:28rpx;'>{{enddate}}</view>
+    </view>
+  </view>
+
+
+
+
+
+  <view wx:key='index' wx:for="{{hotel_room}}" wx:key="{{index}}" style='padding:20rpx 40rpx;width:100%;box-sizing:border-box;height:220rpx;background:#FFF;border-top:1px solid #EDEDED;'>
+    <image src='{{item.image}}' style='width:160rpx;height:131rpx;border-radius:5rpx;float:left'></image>
+    <view style='width:335rpx;margin-left:10rpx;float:left;' hover-class="none" bindtap='roomdetail' data-item='{{item}}' data-index="{{index}}">
+      <view style='margin-left:18rpx;'>
+        <view style='text-align:left;color:#282828;font-size:30rpx;'>{{item.name}}</view>
+      </view>
+      <view>
+        <view style='text-align:left;color:#A3A3A3;font-size:24rpx;margin-left:18rpx;'>{{item.square}}m² {{item.bed_count}}床  wifi{{wifi}} </view>
+        <view wx-if="{{item.red_envelope==2}}" style="color:#FF6D5D;width:162rpx;height:34rpx;background:#FFB2A9;border-radius:17rpx;margin-left:15rpx;line-height:34rpx;text-align:center; margin-top:8rpx;font-size:24rpx;display:inline-block;">直接使用红包</view>
+        <view wx-if="{{item.red_envelope==1}}" style="text-align:center;color:#FF6D5D;width:182rpx;height:34rpx;background:#FFB2A9;border-radius:17rpx;margin-left:15rpx;line-height:34rpx; margin-top:8rpx;font-size:24rpx;display:inline-block;">有可使用红包</view>
+      </view>
+    </view>
+    
+    <view style='float:right;width:150rpx;' >
+        <view style='color:#FF0000;font-size:30rpx;white-space:nowrap;text-align:center'>¥{{item.price}}<text style='color:#CF271B;font-size:26rpx;'>起</text></view>
+      <view id="{{item.coupons_id}}" style="border:none;width:94rpx;margin:0 auto;height:42rpx;font-size:26rpx;text-align:center;padding:0;line-height:42rpx;color:#FFF;border-radius:5rpx;background:#{{item.state==0?'dcdcdc':'CF271B'}}" bindtap="yuding" data-index="{{index}}" disabled="{{item.state==0?'true':'false'}}">预订</view>
+        <view wx-if="{{item.state==0}}" style="text-align:center;color:#FFF;width:130rpx;height:34rpx;background:#CF271B;border-radius:17rpx;margin-left:15rpx;line-height:34rpx; margin-top:8rpx;font-size:24rpx;display:inline-block;">房型已满</view>
+    </view>
+  </view>
+
+  <view class='roomdetail' style="display:{{display}}"  >
+    <view class='room'>
+      <view class='roomimg'>
+        <image src='{{d_image}}'></image>
+        <view class='cha' bindtap='cha'>
+          <icon class='iconfont icon-guanbi'></icon>
+        </view>
+      </view>
+      <view class='roomcon'>
+        <view class='roomcontit'>{{d_name}}</view>
+        <view class='roomconlist'>早餐：{{d_break==1?"含早":""}}</view>
+        <view class='roomconlist'>宽带：{{d_wifi}}</view>
+        <view class='roomconlist'>面积：{{d_square}}m²</view>
+        <view class='roomconlist'>床型：{{d_bed_size}}</view>
+        <view class='roomconlist'>浴室：{{d_yushi}}</view>
+        <view class='roomconlist'>便利设施：{{d_bianli}}</view>
+        <view class='roomconlist'>备注:</view>
+        <button bindtap="yuding" disabled="{{d_state==0?'true':''}}" style="background:#{{d_state==0?'dcdcdc':'0a64f1'}}">立即预定</button>
+      </view>
+      
+    </view>
+  </view>
+</view>

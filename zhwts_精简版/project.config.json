@@ -1,0 +1,92 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.3.0",
+	"appid": "wxf5943df81379af17",
+	"projectname": "%E6%99%BA%E6%85%A7%E4%BA%94%E5%8F%B0%E5%B1%B1123",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 3,
+			"list": [
+				{
+					"id": -1,
+					"name": "a",
+					"pathName": "pages/news-hongbao/hotel/hotel_fill/hotel_fill",
+					"query": "id=1F0888C4-47FC-A815-1939-7FC61F2EBC77&name=测试酒店请勿购买"
+				},
+				{
+					"id": -1,
+					"name": "aa",
+					"pathName": "pages/news-hongbao/maps/maps",
+					"query": "",
+					"scene": 1011
+				},
+				{
+					"id": 2,
+					"name": "123",
+					"pathName": "pages/ma/ma",
+					"query": "id=4FB5A233-3388-9E0A-E5AA-D72F7F7E115F&type=2",
+					"scene": 1011
+				},
+				{
+					"id": 3,
+					"name": "酒店详情",
+					"pathName": "pages/new/hotel/hotel_details/hotel_details",
+					"query": "hotel_id=27995776-E7C8-6A28-F839-97E6CDFC940",
+					"scene": 1036,
+					"referrerInfo": {
+						"appId": "wxf5943df81379af17"
+					}
+				},
+				{
+					"id": 4,
+					"name": "票详情",
+					"pathName": "pages/new/scenic/scenic_details/scenic_details",
+					"query": "scenic_id=292ADE51-6968-97A1-3794-6AE8C982C1DA",
+					"scene": 1008
+				},
+				{
+					"id": 5,
+					"name": "发现",
+					"pathName": "pages/new/find_details/find_details",
+					"query": "templenew_id=A76D2A23-287D-833A-943A-FD8DD42FAE71",
+					"scene": 1007
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/new/maps/maps",
+					"query": "",
+					"scene": 1008
+				}
+			]
+		}
+	}
+}

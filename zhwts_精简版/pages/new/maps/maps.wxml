@@ -1,0 +1,53 @@
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-tab">
+            <view class="weui-tab__panel">
+                <!-- 全部 -->
+                <view class="weui-tab__content">
+                  <map id="myMap" style="width: 100%; height: 100%;position:relative;" longitude="{{map.longitude}}" latitude="{{map.latitude}}" scale='{{map.scale}}' subkey="" polyline="{{polyline}}" markers="{{map.markers}}" controls='{{controls}}' bindregionchange="bindregionchange" data-item="{{map}}" bindmarkertap="bindmarkertap"  bindcontroltap="bindcontroltap" circles="{{circles}}"  show-location>
+                    <!-- 3个选项 -->
+                    <cover-view class="weui-navbar" style='position:fixed;left:0;top:0; opacity:  0.9;'>
+                        <block wx:for="{{tabs}}" wx:key="index">
+                            <cover-view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                                  <cover-image wx:if="{{activeIndex != index}}" class='navbar_img' src='{{item.img}}'></cover-image>
+                                  <cover-image wx:if="{{activeIndex == index}}" class='navbar_img' src='{{item.img2}}'></cover-image>
+                                <cover-view class="weui-navbar__title" style='width:100rpx;height:40rpx;line-height:40rpx;float:left;margin-left:20rpx;'>
+                                  {{item.name}}
+                                </cover-view>
+                            </cover-view>
+                        </block>
+                    </cover-view> 
+                    <!-- 搜索和定位 -->
+                    <cover-view class='box' bindtap='codeg' style='background:#fff;width:80rpx;height:220rpx;position:absolute;right:38rpx;bottom:130rpx;border-radius:10rpx'>
+                      <cover-view class='buttons' bindtap="searchtap">
+                        <cover-image class='buttons_images' src='../img/search.png'></cover-image>
+                        <cover-view class='fontser'>搜索</cover-view>
+                      </cover-view>
+                      <cover-view class='buttons' bindtap="movetoPosition">
+                        <cover-image class='buttons_images' src='../img/location.png'></cover-image>
+                        <cover-view class='fontser'>定位</cover-view>
+                      </cover-view>
+                    </cover-view>
+                    <!-- animation="{{animation}}" -->
+                    <cover-view class='zhe' wx:if="{{isimgs}}">  
+                      <cover-view>
+                        <cover-image class='hongimg' src='../img/kai2.png' style='width:580rpx;height:720rpx;margin:200rpx auto;'></cover-image>
+                        <cover-view class='hong_content'>
+                          <cover-image src='{{hong_img}}' style='position:relative;width:137rpx;height:110rpx;margin:0 auto;border-radius:10rpx;'></cover-image>
+                          <cover-view class='wts-font-14 wts-padding-10' style='color:#FFFFFE;'>{{hong_name}}</cover-view>
+                          <cover-view class='wts-font-22 wts-padding-10' style='color:#FFDB70;'>{{bless}}</cover-view>
+                          <cover-view bindtap="navget" style='width:130rpx;height:130rpx;border-radius:50%;margin:0 auto;margin-top:20rpx;' ></cover-view>
+                          <cover-view class='wts-font-12 wts-padding-10' style='color:#FE958D;'>红包剩余数量：{{hong_num}}</cover-view>
+                          <cover-view bindtap='close' style='position:absolute;right:16%;top:240rpx;width:100rpx;height:100rpx;z-index:1000;'><cover-image src='../img/chacha.png' style='width:30rpx;height:30rpx;margin:35rpx;'></cover-image></cover-view>
+                          
+                        </cover-view>
+                      </cover-view>
+                    </cover-view>
+                  </map>
+                </view>
+            </view>
+        </view>
+    </view>
+  </view>
+  
+

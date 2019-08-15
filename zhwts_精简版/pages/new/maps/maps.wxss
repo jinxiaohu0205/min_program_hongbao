@@ -1,0 +1,129 @@
+/* pages/maps/maps.wxss */
+page,
+.page,
+.page__bd{
+    height: 100%;
+    position: relative;
+}
+.page__bd{
+    padding-bottom: 0;
+    height: 100%;
+}
+.weui-tab__panel{
+  padding-top:0px;
+
+}
+.weui-tab__content{
+    /* padding-top: 60px; */
+    text-align: center;
+    height: 100%;
+}
+/* .weui-tab__panel{
+  position: relative;
+} */
+.weui-navbar{
+  background: #FFF;
+  color: #343434;
+}
+.scroll-x{
+    height:100rpx;
+    white-space:nowrap;
+    /* display:flex; */
+    margin-top: 90rpx;
+    background: #fff;
+}
+/* 隐藏scrollbar */
+::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+.view-parent{
+    display:inline-block;
+}
+.view-item{
+    /* width:60rpx; */
+    height:60rpx;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24rpx;
+    color:#222;
+    margin:20rpx;
+}
+.weui-navbar__slider{
+  width: 120rpx;
+  background-color: #0A63EE;
+}
+.weui-navbar__item.weui-bar__item_on{
+  color: #D50F00;
+}
+.weui-bar__item_on{
+  background: #FFF;
+}
+.navbar_img{
+  width: 40rpx;
+  height:40rpx;
+  float: left;
+  margin-left:60rpx; 
+}
+.search{
+  z-index: 9;
+  position: absolute;
+  left:20rpx;
+  bottom:300rpx;
+  background: #fff;
+  width: 80rpx;
+  height: 254rpx;
+  border-radius: 5rpx;
+}
+.buttons{
+  padding-top: 14rpx;
+  padding-bottom: 10rpx;
+  color: #7B7B7B;
+}
+.buttons_images{
+  width: 50rpx;
+  height: 50rpx;
+  margin: 0 auto;
+}
+.fontser{
+  font-size: 24rpx;
+  color: #aaa;
+  text-align: center;
+}
+.iconfont{
+  font-size:40rpx;
+}
+/* .zhe{
+  transform: scale(0);
+} */
+.zhe_one{
+  position: fixed;
+  left: 0;
+  top: 92rpx;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* z-index: 999; */
+}
+.hongimg{
+  position: relative;
+}
+.hong_content{
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  padding-top:305rpx; 
+}
+.weui-bar__item_ons{
+  background: transparent;
+  color: #D50F00;
+}
+.colorfff{
+  color: #fff;
+  background: #0B58D1;
+}

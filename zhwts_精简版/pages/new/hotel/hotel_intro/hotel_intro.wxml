@@ -1,0 +1,12 @@
+<view class="service">
+  <!-- <view class='servicetit'>设施服务</view> -->
+  <view class='servicelist' wx:for="{{devicetype}}" wx:key="{{item.id}}">
+    <view class='jichu'>{{item.name}}</view>
+    <view class='jicontent'>
+      <view class='jilist' wx:for="{{item.device}}"  wx:for-item="cell" wx:key="index">
+        <icon class='iconfont {{cell.icon}}'></icon>
+        <view>{{cell.name}}</view>
+      </view>
+    </view>
+  </view>
+</view>

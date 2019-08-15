@@ -1,0 +1,44 @@
+.avatar{
+  width: 192rpx;
+  height: 192rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  background: red;
+  margin-top: 158rpx;
+
+}
+image{
+  width: 100%;
+  height: 100%;
+}
+.gettit{
+  font-size: 36rpx;
+  color: #151515;
+  width: 100%;
+  text-align: center;
+  margin-top: 64rpx;
+}
+.getmess1{
+  color: #969696;
+  font-size: 26rpx;
+  text-align: center;
+  margin-top: 32rpx;
+}
+.getmess2{
+  color: #969696;
+  font-size: 26rpx;
+  text-align: center;
+  margin-top: 18rpx;
+}
+.shou{
+  height: 100rpx;
+  width: 680rpx;
+  margin: 0 auto;
+  margin-top: 100rpx;
+  background: #0C66F0;
+  font-size: 34rpx;
+  color: #fff;
+  border-radius: 10rpx;
+  line-height: 100rpx;
+}

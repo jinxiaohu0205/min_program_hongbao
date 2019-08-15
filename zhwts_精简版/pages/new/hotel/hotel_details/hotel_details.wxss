@@ -1,0 +1,166 @@
+/* pages/news-hongbao/hotel/hotel_details/hotel_details.wxss */
+.hotelname{
+  width: 670rpx;
+  border-radius: 5rpx;
+  padding: 20rpx;
+  margin: 0 auto;
+  position: absolute;
+  left: 20rpx;
+  top: 330rpx;
+  /* z-index: 9; */
+  background: #fff;
+  height:76rpx;
+}
+.hoteltit{
+  color:#282828;
+  font-weight:500;
+  height:80rpx;
+  width:60%;
+  overflow:hidden;
+}
+.hotelDetail{
+  width: 100%;
+  height: 146rpx;
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
+  background: #FFF;
+  margin-top:20rpx;
+  clear: both; 
+}
+.hotelDetail view{
+  float: left;
+}
+.hotelDetail1{
+  font-size:14px;
+  width: 100%;
+  color: #444444;
+  line-height: 56rpx;
+  padding-bottom: 10rpx;
+}
+.hotelDetail2{
+  width: 40%;
+  font-size:12px;
+  color: #6D6D6D;
+}
+.hotelDetail3{
+  width: 40%;
+  font-size:12px;
+  color: #6D6D6D;
+}
+.hotelDetail4{
+  width: 20%;
+  font-size:12px;
+  color: #6D6D6D;
+  text-align: right;
+}
+.gang{
+  width: 125rpx;
+  height: 6rpx;
+  background-repeat: repeat-y;
+  background-size: 100% 100%;
+}
+.yuding{
+  width:93rpx;
+  height:51rpx;
+  border-radius:10rpx;
+  margin-top:16rpx;
+  float:right;
+  padding: 0;
+  line-height: 51rpx;
+  outline:none;
+
+}
+.shetit{
+  height:80rpx;
+  line-height:80rpx;
+  color:#444444;
+  font-size:28rpx;
+  width:100%;
+}
+.shecon{
+  height:124rpx;
+  width:100%;
+
+}
+.sheconlist{
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  float: left;
+}
+.sheconlist{
+  height: 100%;
+}
+.sheconlist icon{
+  width:100%;
+  height:60%;
+  line-height:60%;
+}
+.sheconlist text{
+  width:100%;
+  text-align:center;
+  color:#616161;
+  font-size:26rpx;
+  height:30rpx;
+  line-height:30rpx;
+  display:block;
+}
+.addicon{
+  background:#CF271B;
+  color:#fff;
+  width:80rpx;
+  height:80rpx;
+  line-height:80rpx;
+  border-radius:50%;
+}
+
+.roomdetail{
+  width: 100%;
+  min-height: 100%;
+  background: rgba(0,0,0,0.8);
+}
+.room{
+  padding: 48rpx;
+  border-radius:10px;
+  overflow:hidden;
+}
+.roomimg{
+  background: #fff;
+}
+.roomimg image{
+  width: 100%;
+}
+.roomcon{
+  background: #fff;
+  padding-bottom: 50rpx;
+}
+.roomcontit{
+  color:#282828;
+  font-size:32rpx;
+  text-align:center;
+  height:80rpx;
+  line-height:80rpx;
+}
+.roomconlist{
+  color:#181818;
+  font-size:26rpx;
+  padding:10rpx 70rpx;
+}
+.roomcon button{
+  width: 470rpx;
+  height: 100rpx;
+  border-radius: 10px;
+  background: #0a64f1;
+  font-size: 36rpx;
+  text-align: center;
+  line-height: 100rpx;
+  margin-top: 50rpx;
+  color: #fff
+}
+.cha{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  /* background: red; */
+  width: 20px
+}

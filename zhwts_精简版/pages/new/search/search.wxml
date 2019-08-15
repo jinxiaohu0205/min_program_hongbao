@@ -1,0 +1,156 @@
+<view class="page__bd">
+  <view wx:if="{{showTab}}" class="" style='height:86rpx;width:100%;background:#FFF;z-index:9999;position:fixed;top:0;left:0;'>
+      <view wx:for="{{tabs}}" style='height:86rpx;width:50%;float:left;line-height:86rpx;text-align:center' wx:key="index" data-index="{{index}}" bindtap="bindTab">
+        <view class='{{index==currentTab?"tab_bar_bottom":""}}' style="padding:0 10rpx;color:#{{index==currentTab?'d50f00':'000'}};">
+            {{item.title}}
+        </view>
+      </view>
+  </view>
+
+  <view style='height:86rpx;'></view>
+  <view wx:if="{{showListTab}}" style='width:623rpx;margin:0 auto;margin-top:20rpx;background:#FFF;overflow:hidden;padding:40rpx;'>
+    <view style='height:70rpx;border-bottom:1px solid #E5E7EB;'>
+      <view style='width:470rpx;font-size:36rpx;height:70rpx;line-height:70rpx;overflow:hidden;white-space: nowrap;text-overflow:ellipsis;float:left;'>{{weizhi}}</view>
+      <view style='float:right;color:#CF271B;font-size:24rpx;line-height:70rpx;' bindtap="toGetLocation">
+        <image src='../img/weizhi.png' style='width:40rpx;height:40rpx;float:left;margin-top:15rpx;margin-right:10rpx;'></image> 
+        当前位置
+      </view>
+    </view>
+    <view bindtap='dianji' style='width:100%;height:120rpx;background:#FFF;margin-top:10rpx;'>
+      <view style='width:32%;height:120rpx;float:left;'>
+        <view style='color:#7D7D7D;font-size:24rpx;line-height:60rpx;color:rgba(185,185,185,1);'>入住<text style='margin-left:35rpx'>{{xuanweek1}}</text></view>
+        <view style='color:#282828;font-size:36rpx;'>{{startdate1}}</view>
+      </view>
+      <view style='width:20%;height:120rpx;line-height:120rpx; float:left;font-size:36rpx;text-align:center'>至</view>
+      <view style='width:30%;margin-left:2%;height:120rpx;float:left;'>
+        <view style='color:#7D7D7D;font-size:24rpx;line-height:60rpx;color:rgba(185,185,185,1);'>离店<text style='margin-left:35rpx'>{{xuanweek2}}</text></view>
+        <view style='color:#282828;font-size:36rpx;'>{{enddate1}}</view>
+      </view>
+      <view style='width:16%;height:120rpx;float:left;text-align:right;color:#191919;font-size:24rpx;line-height:120rpx;'>共{{day}}晚</view>
+    </view>
+    <input style='border-bottom:1px solid #E5E7EB;font-size:24rpx;color:rgba(185,185,185,1);height:80rpx;height:80rpx;opacity:{{opacity}}' bindinput='inputTyping' confirm-type='done' placeholder='关键词/位置/品牌/酒店名'></input>
+
+    <view style='font-size:24rpx;color:rgba(185,185,185,1);line-height:80rpx;' bindtap="showxuan"><text wx:for="{{checkArr}}" wx:key="index"> {{item}} </text></view>
+    <view style='width:401rpx;height:83rpx;background:rgba(207,39,27,1);border-radius:42rpx;line-height:83rpx;text-align:center;color:#FFF;margin:20rpx auto;box-shadow:0 10rpx 20rpx #CF271B;' bindtap="inputTyping1">查询酒店</view>
+  </view>
+
+  <view style='width:100%;background:#FFF;padding:0 31rpx;box-sizing:border-box;overflow:hidden;z-index:9999;position:fixed;top:80rpx;left:0;' wx-if="{{listshow}}">
+    <view style='width:227rpx;height:71rpx;background:rgba(243,244,248,1);border-radius:10rpx;font-size:23rpx;color:#A5A5A5;margin:31rpx 0;text-align:center;line-height:71rpx;float:left;' bindtap='dianji'>
+      <text>住</text>
+      <text style='color:#CF271B'>{{startdate2}}</text>
+      <text>离</text>
+      <text style='color:#CF271B'>{{enddate2}}</text>
+    </view>
+    <view style='width:439rpx;height:71rpx;background:rgba(243,244,248,1);border-radius:10rpx;float:left;margin-left:25rpx;margin-top:31rpx;'>
+      <image bindtap="inputTyping1" style='width:36rpx;height:36rpx;float:left;margin-left:25rpx;margin-top:17rpx;' src='../img/search.png'></image>
+      <input type="text" style='font-size:24rpx;color:rgba(185,185,185,1);height:71rpx;float:left;margin-left:10rpx;width:360rpx' placeholder="输入酒店名称搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+    </view>
+ 
+    <view style='width:100%;clear:botn;overflow:hidden'>
+      <view style='height:86rpx;width:50%;float:left;line-height:86rpx;text-align:center'>
+        <picker class='wts-line-height wts-background wts-relative' style='z-index:999;' hover-class='hoverClass' bindchange="bindPickerChange" value="{{index}}" range="{{sordName}}">{{sordName[sord_index]}}<image src='../img/xia.png' style='width:30rpx;height:20rpx;margin-left:10rpx;'></image></picker>
+      </view>
+      <view style='height:86rpx;width:50%;float:left;line-height:86rpx;text-align:center'>
+        <view class='wts-line-height wts-background wts-relative {{Rating_box?"hoverClass":""}} wts-box-sizing' bindtap="bindRating" style='z-index:999;'>价格/星级 <image src='../img/xia.png' style='width:30rpx;height:20rpx;margin-left:10rpx;'></image></view>
+        <!-- wx:if="{{Rating_box}}" -->
+        <view wx-if="{{animationData}}" class='wts-100 wts-fixed wts-box-sizing wts-overflow' style='top:290rpx;left:0;z-index:99;'>
+
+          <view style='background:#FFF;width:100%;height:110rpx;'>
+            <view style='width:674rpx;height:50rpx;position:relative;margin:0 auto;'>
+              <text>￥{{leftValue}}</text> - <text>￥{{rightValue}}</text>
+            </view>
+            <view class='twoSlider'>
+              <slider min='0' max='500' value='{{leftValue}}' activeColor='#cecacb' block-color='#ffc900' backgroundColor='#f26a36' block-size='20' step='100' style='width:46%;margin-right:0rpx;' bindchange="leftChange" />
+              <view style='width:5%;height:5rpx;margin-right:0rpx;background:#f26a36'></view>
+              <slider min='501' max='1000' value='{{rightValue}}' activeColor='#f26a36' block-color='#ffc900' backgroundColor='#cecacb' block-size='20' step='100' style='width:46%;margin-left:0rpx;' bindchange="rightChange" />
+            </view>
+          </view>
+
+          <checkbox-group class='wts-100 wts-bottom wts-box-sizing justify-between flex-wrap wts-background' bindchange="checkboxChange" style='padding:20rpx 30rpx 0;box-sizing:border-box;'>
+            <view data-id="{{item.name}}" wx:for="{{rating_checkbox}}" bindtap='bindCheckbox' wx:key="index" style='border:1px solid {{item.checked==true?"#d3483a":"#ddd"}};color:{{item.checked==true?"#d3483a":"#333"}};border-radius:10rpx;margin-bottom:20rpx;width:29%;height:50rpx;line-height:50rpx;'>
+              <label>
+                <checkbox value="{{item.name}}" checked="{{item.checked}}" hidden='hidden'></checkbox>
+                <text>{{item.value}}</text>
+              </label>
+            </view>
+          </checkbox-group>
+          <view class='wts-100 justify-between wts-line-height wts-bottom wts-top wts-background'>
+            <view class='wts-50 wts-right' hover-class='hoverClass' bindtap='bindratingClear'>清空</view>
+            <view class='wts-50' hover-class='hoverClass' style='background:#ffc900;' bindtap='bindRatingBtn'>确定</view>
+          </view>
+        </view>
+      </view>
+
+
+    </view>
+  </view>
+  <view style='width:703rpx;margin:20rpx auto;position:relative;top:{{listshow?"200rpx":"0"}}' hidden="{{contentShowed}}">
+      <view style='font-size:30rpx;color:rgba(6,6,6,1);line-height:120rpx;font-weight:400;' wx:if="{{showListTab}}">热门推荐</view>
+      <view class="xun" hover-class="weui-cell_active" style="background:#fff;border-raidus:20px;" wx:for="{{roomstatus}}" wx:key="index">
+          <view class="weui-cell__bd">
+              <view class='content'>
+                <view class='content_top'>
+                  <view class='text_content flex'>
+                    <image src='{{item.image}}'></image>
+                    <view style='margin-left:40rpx;width:400rpx'>
+                      <view class='flex justify-between' style='height:40rpx;overflow:hidden'>
+                        <view class='wts-font-14 wts-line-height20' style='width:65%;color:#0D0D0D;overflow:hidden;text-overflow:ellipsis;white-space:nowrap'>{{item.name}}</view>
+                        <view class='wts-font-10 wts-line-height20' style='width:30%;text-align:right;color:#BEBEBE;'>{{item.rating}}</view>
+                      </view>
+                      <view class='flex justify-between' style='border-bottom:1px solid #F3F4F8;height:25px;overflow:hidden'>
+                        <view class='wts-font-10 wts-line-height20' style='width:65%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;height:40rpx;color:#6F6F6F'>{{item.address}}</view>
+                        <view class='wts-font-13 wts-line-height20' style='text-align:right;color:#DD2A00;'>￥{{item.price}}/起</view>
+                      </view>
+                      <view class='flex' wx-if="{{item.device}}">
+                        <view class='flex-row desc'>{{item.device[0]}}</view>
+                        <view class='flex-row desc'>{{item.device[1]}}</view>
+                        <view class='flex-row desc'>{{item.device[2]}}</view>
+                      </view>
+                      <view class='flex' style='line-height:25rpx;height:50rpx;color:5D5D5D;overflow:hidden;font-size:18rpx;margin-top:6rpx;' wx-if="{{item.devicea}}">
+                        {{item.devicea}}
+                      </view>
+                    </view>
+                  </view>
+                  <view>
+                  </view>
+                </view>
+                <view style='margin-top:15px;'>
+                  <button disabled="{{item.isred==0?'true':''}}" class='buttons' style='box-sizing:border-box;float:left;background:#{{item.isred==0?"D5D6DC":"EC1606"}};' bindtap='getred' data-index='{{item}}'>{{item.isred==0?"暂无红包":"抢现金红包"}}</button>
+                  <button class='buttons' style='border:none;background:#FFF;border:1px solid #FF7200;color:#FF7200;float:right;' bindtap='goyu' data-index='{{index}}' data-item='{{item}}'>直接预订</button>
+                </view>
+              </view>
+          </view>
+      </view>
+  </view>
+
+  <view class='zhe' animation="{{animation}}" style='z-index:100000000000'> 
+      <image class='hongimg' src='../img/kai2.png' style='width:554rpx;height:700rpx;'></image>
+      <view class='hong_content'>    
+        <view style='position:absolute;right:5%;top:10rpx;width:100rpx;height:100rpx;z-index:1000;'>
+          <image bindtap='close' src='../img/chacha.png' style='width:30rpx;height:30rpx;margin:35rpx;'></image>
+        </view>
+        <image src='{{hong_img}}' style='width:137rpx;height:110rpx;margin:30rpx 208rpx;border-radius:10rpx;'></image>
+        <view class='wts-font-14' style='color:#FFFFFE;text-align:center;margin-top:20rpx;'>{{hong_name}}</view>
+        <view bindtap="navget" style='width:130rpx;height:130rpx;border-radius:50%;margin:0 auto;margin-top:54rpx;' ></view>
+        <view class='wts-font-12' style='color:#FE958D;margin-top:20rpx;text-align:center'>红包剩余数量：{{hong_num}}</view>
+      </view>
+  </view>
+  <view wx-if="{{xuanshow}}" style='width:100%;height:100%;position:fixed;top:0;left:0;background:rgba(0,0,0,0.8);'>
+    <view style='width:100%;position:absolute;bottom:0;left:0;overflow:hidden;background:#FFF;padding-top:40rpx;'>
+      <view style="width:100%;height:60rpx;line-height:60rpx;font-size:36rpx;margin-bottom:20rpx;padding:0 40rpx;box-sizing:border-box;">筛选星级<image src='../img/chacha.png' style="width:27rpx;height:27rpx;float:right" bindtap="close"></image></view>
+
+      <checkbox-group class='wts-100 wts-bottom wts-box-sizing justify-between flex-wrap wts-background' style="padding:0 40rpx;box-sizing:border-box;" bindchange="checkboxChange">
+            <view data-id="{{item.name}}" wx:for="{{rating_checkbox}}" bindtap='bindCheckbox' wx:key="index" style='border:1px solid {{item.checked==true?"#d3483a":"#ddd"}};color:{{item.checked==true?"#d3483a":"#333"}};border-radius:10rpx;margin-bottom:20rpx;width:29%;height:50rpx;line-height:50rpx;text-align:center;'>
+              <label>
+                <checkbox value="{{item.name}}" checked="{{item.checked}}" hidden='hidden'></checkbox>
+                <text>{{item.value}}</text>
+              </label>
+            </view>
+          </checkbox-group>
+          <view class='wts-100 justify-between wts-line-height wts-background'>
+            <view class='wts-50 wts-right' hover-class='hoverClass' style='text-align:center;border-left:2rpx solid #dcdcdc;border-bottom:2rpx solid #dcdcdc' bindtap='bindratingClear'>清空</view>
+            <view class='wts-50' hover-class='hoverClass' style='background:#ffc900;text-align:center;' bindtap='bindRatingBtn'>确定</view>
+          </view>
+    </view>
+  </view>
+</view>

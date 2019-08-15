@@ -1,0 +1,7 @@
+<!--pages/new/me/app/app.wxml-->
+<view style='width:100%'>
+  <image src='../../img/zhwts_logo.png' style='width:190rpx;height:190rpx;position:relative;left:50%;margin-left:-95rpx;border-radius:20rpx;margin-top:200rpx;'></image>
+  <view style='width:290rpx;height:80rpx;line-height:80rpx;margin:60rpx auto;text-align:center;background:#0D5EDD;border-radius:10rpx;color:#FFF' bindtap='xiazai'>立即下载安装</view>
+  <view style='text-align:center;color:#B4B5BA;font-size:28rpx;'>点击下载智慧五台山APP</view>
+  <view style='text-align:center;color:#B4B5BA;font-size:28rpx;'>苹果手机请到手机应用商店搜索“智慧五台山APP”下载</view>
+</view>

@@ -1,0 +1,36 @@
+.service{
+  padding:0 40rpx;
+  min-height:100%;
+  background:#fff;
+}
+.servicetit{
+  colro:#323232;
+  font-size:32rpx;
+  height:60rpx;
+  line-height:60rpx;
+}
+.servicelist{
+  margin-bottom: 40rpx
+
+}
+.jichu{
+  color:#323232;
+  font-size:28rpx;
+  height:40rpx;
+  line-height:40rpx;
+}
+.jicontent{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-start;
+}
+.jilist{
+  width: 25%;
+  text-align: center
+}
+.jilist view{
+  color:#666666;
+  font-size:26rpx;
+
+}
+

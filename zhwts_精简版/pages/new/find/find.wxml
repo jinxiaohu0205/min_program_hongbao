@@ -1,0 +1,65 @@
+<view class='container'>
+  <view style='width:100%;height:370rpx;'>
+    <swiper indicator-dots="false" indicator-active-color='#f7ad37' indicator-color='#d7d7d7' autoplay="true" interval="5000" duration="500" style='height:330rpx;'>
+        <swiper-item wx:for="{{imgUrls}}" wx:key='item' style='broder-radius:30rpx;'>
+            <image src="{{item.image}}" mode="aspectFill"  style='width:100%;height:330rpx;broder-radius:30rpx;'></image>
+        </swiper-item>
+    </swiper>
+  </view>
+  <!-- 3个选项 -->
+  <view class="weui-tab">
+    <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+            <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                <view class="weui-navbar__title" style='font-weight:700'>{{item}}</view>
+            </view>
+        </block>
+        <view class="weui-navbar__slider" style="left: 60px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+    </view> 
+  </view>
+  <view class='finds {{activeIndex==0?"ishow":"ishide"}}' style='margin-top:100rpx;'>
+    <view class='item' style='padding:16rpx 24rpx;margin:20rpx 0;' wx:for="{{find_list}}" wx:key="{{item.id}}" hover-class="none">
+      <navigator url='../find_details/find_details?templenew_id={{item.id}}' hover-class="none">
+        <view class='titles wts-font-16' style='color:#121212;'>{{item.title}}</view>
+        <view class='content wts-font-13 lines_ellipsiss' style='color:#3B3B3B;margin:25rpx 0;'>
+          {{item.contents}}
+        </view>
+        <view class='flex-row img_content'>
+          <image wx:for="{{item.img}}"  wx:for-item="cell" wx:key="index" src='{{cell}}' style='width:224rpx;height:196rpx;'></image>
+        </view>
+      </navigator>
+      <view class='flex flex-row wts-bottom1 justify-between' style='height:80rpx;padding-bottom:20rpx;'> 
+        <view class='flex flex-row align-center'>
+          <image class='tubiao' src='../img/shijian.png' style=''></image>
+          <view  class='wts-font-12' style='color:#989898;margin-left:10rpx;'>{{item.create_time}}</view>
+        </view>
+        <view class='flex flex-row align-center' style='margin-left:10rpx;'>
+          <image class='tubiao' src='../img/yan.png' style=''></image>
+          <view class='wts-font-12' style='color:#989898;margin:0 10rpx;'>{{item.hits}}人看过</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='finds {{activeIndex==1?"ishow":"ishide"}}' style='margin-top:100rpx;'>
+    <navigator  url='../find_details/find_details?templenew_id={{item.id}}' class='item' style='padding:16rpx 24rpx;margin:20rpx 0;' wx:for="{{find_lists}}" wx:key="{{item.id}}" hover-class="none">
+      <view class='titles wts-font-16' style='color:#121212;'>{{item.title}}</view>
+      <view class='content wts-font-13 lines_ellipsiss' style='color:#3B3B3B;margin:25rpx 0;'>
+        {{item.contents}}
+      </view>
+      <view class='flex-row img_content'>
+        <image wx:for="{{item.img}}"  wx:for-item="cell" wx:key="index" src='{{cell}}' style='width:224rpx;height:224rpx;'></image>
+      </view>
+      <view class='flex flex-row wts-bottom1 justify-between' style='height:80rpx;padding-bottom:20rpx;'> 
+        <view class='flex flex-row align-center'>
+          <image class='tubiao' src='../img/shijian.png' style=''></image>
+          <view  class='wts-font-12' style='color:#989898;margin-left:10rpx;'>{{item.create_time}}</view>
+        </view>
+        <view class='flex flex-row align-center' style='margin-left:10rpx;'>
+          <image class='tubiao' src='../img/yan.png' style=''></image>
+          <view class='wts-font-12' style='color:#989898;margin:0 10rpx;'>{{item.hits}}人看过</view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>
+

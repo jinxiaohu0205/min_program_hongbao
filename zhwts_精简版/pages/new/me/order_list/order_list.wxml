@@ -1,0 +1,63 @@
+
+<!--pages/me/scenic_order_list/scenic_order_list.wxml-->
+<view class="page" style='background:#F3F4F8;'>
+<!--头部-->
+    <view class="wts-100 wts-background wts-line-height justify-between wts-overflow wts-text-center" style='z-index:999;font-size:30rpx;width:94%;padding:20rpx;font-weight:700'>
+        <view class="tab_bar {{tab_color[0]}}" data-tab="0" bindtap="bindTab">
+          <view class='wts-inline-block wts-line-height' style='border-bottom:2rpx solid #{{tab_color[0]?"CF271B":""}};color:#{{tab_color[0]?"CF271B":""}}'>
+            全部订单
+          </view>
+        </view>
+        <view class="tab_bar {{tab_color[1]}}" data-tab="1" bindtap="bindTab">
+          <view class='wts-inline-block wts-line-height' style='border-bottom:2rpx solid #{{tab_color[1]?"CF271B":""}};color:#{{tab_color[1]?"CF271B":""}}'>
+            待支付
+          </view>
+        </view>
+        <view class="tab_bar {{tab_color[2]}}" data-tab="2" bindtap="bindTab">
+          <view class='wts-inline-block wts-line-height' style='border-bottom:2rpx solid #{{tab_color[2]?"CF271B":""}};color:#{{tab_color[2]?"CF271B":""}}'>
+            有效单
+          </view>
+        </view>
+        <view class="tab_bar {{tab_color[3]}}" data-tab="3" bindtap="bindTab">
+          <view class='wts-inline-block wts-line-height' style='border-bottom:2rpx solid #{{tab_color[3]?"CF271B":""}};color:#{{tab_color[3]?"CF271B":""}}'>
+            退款中
+          </view>
+        </view>
+    </view>
+
+<!--内容-->
+<view style='width: 94%;height:{{winHeight-41}}px;margin:0 auto;margin-top:20rpx;'>
+  <view wx-if="{{order_list.length==0}}" style='text-align:center;font-size:32rpx;color:#FE9500'>暂无该类订单</view>
+  <scroll-view class="wts-overflow" scroll-top='{{scroll_top}}' scroll-with-animation='true' scroll-y='true' enable-back-to-top='true' bindscrolltolower="onReachBottom" style='width: 100%;height:{{winHeight-41}}px;'>
+
+      <view wx:for="{{order_list}}" wx:key='item' wx:for-item='item'  class="wts-100 wts-background wts-overflow" hover-class='hoverClass'  style='height:220rpx;width:94%;margin:0 auto;border-radius:20rpx;background:#fff;padding:0 20rpx;margin-bottom:20rpx'>
+          <view class="wts-100 wts-line-height wts-overflow wts-box-sizing" style='height:80rpx;color:#363636;font-size:26rpx;border-bottom:2rpx solid #F3F4F8'>
+            <icon class='iconfont {{item.ticket_type=="景点门票"?"icon-menpiao2":"icon-jiudianxin-"}}' style='color:#{{item.ticket_type=="景点门票"?"FFAD0F":"CF271B"}}'></icon>
+            <text style='margin-left:10rpx'>{{item.ticket_type}}</text>
+            <view class="hotelbtn">
+              <button style="background:none;padding:0;color:#000;text-align:right" data-href='{{item.piao_href}}' data-sale_type='{{item.sale_type}}' data-order_id='{{item.order_id}}' data-item="{{item}}">{{item.state_name}}</button>      
+            </view>
+          </view>
+          <navigator url='/pages/{{item.piao_type}}/{{item.piao_href}}/{{item.piao_href}}?order_id={{item.order_id}}&sale_type={{item.sale_type}}&order_state={{order_state}}' class="wts-100 wts-overflow wts-padding wts-font-26  wts-padding-lr" style='height:152rpx;position:relative;' hover-class="none">
+              <view class="wts-100 wts-line-height60 wts-padding wts-font-30" style='color:#363636;font-size:32rpx;width:60%;position:absolute;top:20rpx;left:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap'>
+                  {{item.name}}
+              </view>
+              <view class="wts-100 wts-line-height60 wts-padding wts-666" style='color:#9D9D9D;font-size:24rpx;position:absolute;top:76rpx;left:0;width:60%;' wx:if="{{item.ticket_type=='酒店订单'}}">
+                  有效期：{{item.from_date}}至{{item.end_date}}
+              </view>
+              <view class="wts-100 wts-line-height60 wts-padding wts-666" style='color:#9D9D9D;font-size:24rpx;position:absolute;top:76rpx;left:0;width:60%;' wx:if="{{item.ticket_type=='景点门票'}}">
+                  下单时间：{{item.ordermark}}
+              </view>
+              <view class="wts-100 wts-line-height60 wts-padding wts-666" style='color:#363636;font-size:30rpx;position:absolute;right:0;top:20rpx;width:50%;text-align:right'>
+                  付款： ￥{{item.price}}
+              </view>
+              <view class="wts-100 wts-line-height60 wts-padding wts-666" style='width:40%;position:absolute;right:0;top:76rpx;color:#A1A1A1;font-size:24rpx;text-align:right'>
+                  数量：{{item.count}}
+              </view>
+          </navigator>
+      </view>
+  </scroll-view>
+</view>
+</view>
+
+

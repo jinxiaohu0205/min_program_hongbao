@@ -1,0 +1,10 @@
+<view class="orderpay">
+  <view class='orderdetail'>
+        <view class='paytime'>请在{{enddate}}之前完成支付</view>
+        <view class='paymoney'>￥<text>{{amount}}</text></view>
+        <view class='paymess'>{{hotelname}}{{roomtype}}{{breakfast==1?' 含早餐':'不含早餐'}}</view>
+        <view class='paymess'>{{starttime}}——{{endtime}}入住{{day_count}}晚</view>
+  </view>
+  <view class='notice'>请在规定时间内完成支付，超时订单将被关闭</view>
+  <view bindtap='pay' class='pay'>确认支付</view>
+</view>

@@ -1,0 +1,72 @@
+.successbox{
+  height: 100%;
+  width: 100%;
+  background: #fff;
+
+}
+.success{
+  font-size: 200rpx;
+  text-align: center;
+  width: 100%;
+  color: #09b900;
+}
+.successtext{
+  width: 100%;
+  text-align: center;
+  font-size: 40rpx;
+  color: #000;
+  height: 80rpx;
+  line-height: 80rpx;
+
+}
+.lookdetail{
+  width: 90%;
+  margin: 0 auto;
+  height: 88rpx;
+  text-align: center;
+  background: #CF271B;
+  color: #fff;
+  font-size: 36rpx;
+  line-height: 88rpx;
+  margin-top: 36rpx;
+  border-radius: 10rpx;
+}
+.backindex{
+  width: 90%;
+  margin: 0 auto;
+  height: 88rpx;
+  text-align: center;
+  background: #C7C7C7;
+  color: #fff;
+  font-size: 36rpx;
+  line-height: 88rpx;
+  margin-top: 36rpx;
+  border-radius: 10rpx;
+}
+.advert{
+  height: 120rpx;
+  width: 90%;
+  background: #CF271B;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-top: 58rpx;
+}
+.advert image{
+  width: 100%;
+  height: 100%;
+}
+
+.guestbox{
+  margin-top:52rpx;
+
+}
+.guesttit{
+  font-size:30rpx;
+  color:#282828FF;
+  padding:0 20rpx;
+  font-weight:700;
+
+}
+
+

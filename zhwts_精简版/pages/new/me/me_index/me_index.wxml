@@ -1,0 +1,104 @@
+<!--pages/news-hongbao/me/me_index/me_index.wxml-->
+<view class='container' style='padding:25rpx;'>
+  <!-- 用户头部 -->
+  <view class='header flex flex-row wts-100' style='padding:15rpx 0;'>
+    <image src='{{headimgurl}}' style='width:165rpx;height:165rpx;border-radius:50%;'></image>
+    <view class='wts-70' style='width:500rpx;margin:30rpx 0 0 30rpx;'>  
+      <view class='flex justify-between'>
+        <view class='wts-font-21' style='color:#010101;'>{{nickname}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 红包中心 -->
+  <view class='balance' style='margin-top:30rpx;'>
+    <view class='flex flex-row justify-between'>
+      <view class='wts-font-16' style='color:#2C2C2C;'>红包中心</view>
+      <view class='wts-font-12' style='color:#909090;' bindtap='lookcore'>查看全部</view>
+    </view>
+    <view class='flex flex-row justify-around quan' style='background:#CF271B;border-radius:10rpx;margin-top:25rpx;height:168rpx;margin-bottom:10rpx;'>
+      <view class='flex flex-row align-center' style='height:170rpx;'>
+        <view class='wts-font-24 wts-text-center' style='width:82rpx;height:82rpx;background:#FFDF6E;border-radius:50%;color:#D91E00;line-height:84rpx;'>￥</view>
+        <view bindtap='mylin'>
+          <view style='margin-left:20rpx;'>
+            <view class='wts-font-13' style='color:#fff;'>我的零钱</view>
+            <view class='wts-font-24' style='color:#fff;margin-top: -10rpx;'>{{amount}}<text class='wts-font-13' decode="nbsp">&nbsp;元</text></view>
+          </view>
+        </view>
+      </view>
+      <view class='flex flex-row align-center' style='height:170rpx;'>
+        <view class='wts-font-24 wts-text-center' style='width:82rpx;height:82rpx;background:#FFDF6E;border-radius:50%;color:#D91E00;'>券</view>
+        <view bindtap='myquan'>
+          <view style='margin-left:20rpx;'>
+            <view class='wts-font-13' style='color:#fff;'>我的优惠券</view>
+            <view class='wts-font-24' style='color:#fff;margin-top: -10rpx;'>{{quannum}}<text class='wts-font-13' decode="nbsp">&nbsp;张</text></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 用户订单 -->
+  <view class='order wts-bottom1' style='height:300rpx;'>
+    <view class='flex flex-row justify-between wts-padding10'>
+      <view class='wts-font-17' style='color:#2C2C2C;'>我的订单</view>
+      <view class='wts-font-12' style='color:#909090;' bindtap='lookorder'>查看全部</view>
+    </view>
+    <view class='order_three flex flex-row justify-around align-center wts-padding10' style='width:700rpx;background:#f3f4f8;border-radius:10rpx;'>
+      <navigator url='../order_list/order_list?type=0&state=0'>
+        <view class='iconfont icon-icon' style='color:#E92C00;'></view>
+        <view class='text wts-font-12'>全部订单</view>
+      </navigator> 
+      <navigator url='../order_list/order_list?type=0&state=1&type=0'>
+        <view class='iconfont icon-dingdanzhifu' style='color:#0670DD;'></view>
+        <view class='text wts-font-12'>待支付</view>
+      </navigator> 
+      <navigator url='../order_list/order_list?type=0&state=3&type=0'>
+        <view class='iconfont icon-dingdanquxiao' style='color:#EE9700;'></view>
+        <view class='text wts-font-12'>取消/退订</view>
+      </navigator> 
+    </view>
+  </view>
+  
+<official-account style=""></official-account>
+  <view class='wts-overflow wts-line-height50 wts-bottom1' style='height:100rpx;' hover-class="none" bindtap='wenti'>
+    <view class="wts-line-height50 wts-overflow wts-padding wts-font-14 justify-between">
+      <view class="">
+        常见问题
+      </view>
+      <view class="">
+        <view class="iconfont icon-arrow wts-c2c2c2 wts-font-18"></view>
+      </view>
+    </view>
+  </view>
+
+  <view class='wts-overflow wts-line-height50 wts-bottom1' style='height:100rpx;' hover-class="none" bindtap='women'>
+    <view class="wts-line-height50 wts-overflow wts-padding wts-font-14 justify-between">
+      <view class="">
+        关于我们
+      </view>
+      <view class="">
+        <view class="iconfont icon-arrow wts-c2c2c2 wts-font-18"></view>
+      </view>
+    </view>
+  </view>
+
+  <view class='wts-overflow wts-line-height50 wts-bottom1' style='height:100rpx;' hover-class="none" bindtap='showcall'>
+    <view class="wts-line-height50 wts-overflow wts-padding wts-font-14 justify-between">
+      <view class="">
+        联系我们
+      </view>
+      <view class="">
+        <view class="iconfont icon-arrow wts-c2c2c2 wts-font-18"></view>
+      </view>
+    </view>
+  </view>
+  <view class='wts-overflow wts-line-height50 wts-bottom1' style='height:100rpx;' hover-class="none" bindtap='xiazai'>
+    <view class="wts-line-height50 wts-overflow wts-padding wts-font-14 justify-between">
+      <view class="">
+        下载智慧五台山APP
+      </view>
+      <view class="">
+        <view class="iconfont icon-arrow wts-c2c2c2 wts-font-18"></view>
+      </view>
+    </view>
+  </view>
+</view>

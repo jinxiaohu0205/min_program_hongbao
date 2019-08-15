@@ -1,0 +1,30 @@
+/* pages/news-hongbao/me/me_index/me_index.wxss */
+.balance{
+  height: 280rpx;
+  border-bottom: 1px solid #E5E5E5;
+}
+.order_three .iconfont{
+  text-align: center;
+  color: #0A63EE;
+  font-size: 65rpx;
+}
+.order_three .text{
+  margin-top: -20rpx;
+  color: #2D2D2D;
+}
+.quan navigator{
+ background-color:rgba(0, 0, 0, 0);
+  opacity:1;
+}
+.kf_button{
+  width: 100rpx;
+  height: 100rpx;
+  padding: 0;
+}
+.kf_button::after{
+  border: none;
+}
+.kf_button image{
+  width: 100rpx;
+  height: 100rpx;
+}

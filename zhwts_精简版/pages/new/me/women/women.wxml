@@ -1,0 +1,5 @@
+<!--pages/news-hongbao/me/women/women.wxml-->
+<import src="../../../../wxParse/wxParse.wxml"/>
+<view style='padding:30rpx;' class="wts-background wts-box-sizing contenter">
+  <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+</view>

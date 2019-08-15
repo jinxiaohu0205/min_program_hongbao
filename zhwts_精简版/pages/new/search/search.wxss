@@ -1,0 +1,202 @@
+/* news-hongbao/search/search_index/search_index.wxss */
+input::after{
+  border:none;
+} 
+button::after {
+  border: none
+}
+button{
+  padding: 0;
+}
+page{
+  background:#F3F4F8;
+}
+.page__bd{
+  width:100%;
+  /* position:fixed; */
+
+}
+.zhe{
+  transform: scale(0);
+}
+.weui-search-bar__cancel-btn{
+  color: #fff;
+  background: #d50f00;
+  width: 100rpx;
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  text-align: center;
+}
+.weui-search-bar__cancel-btn::after {
+  border: none
+}
+.heat_search{
+  padding: 30rpx;
+  padding-top: 120rpx;
+
+}
+.heat_content{
+  color:#636363;
+  font-size:26rpx;
+  background:#F3F4F8;
+  padding:10rpx 20rpx;
+  height:40rpx;
+  line-height:40rpx;
+  float:left;
+  margin-right:20rpx;
+  margin-top:30rpx;
+  text-align:center;
+  border-radius:20rpx;
+}
+.moudel_search{  
+  font-size: 26rpx;
+  color: #636363;
+  padding: 10rpx 20rpx;
+  margin-top: 20rpx;
+  background: #fff;
+  margin-right:20rpx;
+  border-radius: 30rpx;
+}
+.weui-search-bar{
+  border: none;
+}
+.weui-cellsa {
+  padding:0 30rpx;
+  background: #F3F4F8
+}
+.xun{
+  border-radius: 20rpx;
+  padding:25rpx 30rpx;
+  margin-bottom:40rpx;
+  overflow: hidden;
+}
+.content_top{
+  width: 100%;
+}
+.text_content{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap:nowrap;
+  justify-content: flex-start;
+}
+.content_top image{
+  width:180rpx;
+  height:140rpx;
+  border-radius: 10rpx;
+}
+.desc{
+  font-size: 18rpx;
+  color: #E8A53B;
+  padding: 4rpx 10rpx;
+  border: 1px solid #E8A53B;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  margin-right: 10rpx;
+}
+.buttons{
+  width: 300rpx;
+  height: 56rpx;
+  font-size: 26rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 54rpx;
+  border-radius: 10rpx;
+}
+.zhe{
+  position:fixed;
+  top:0;
+  left:14%;
+}
+.hongimg{
+  position: absolute;
+  top: 100px;
+}
+.hong_content{
+  width:554rpx;
+  height:700rpx;
+  margin:0 auto;
+  position: absolute;
+  top: 230rpx;
+  padding-top:50rpx; 
+}
+.weui-bar__item_ons{
+  background: transparent;
+}
+.colorfff{
+  color: #fff;
+  background: #0B58D1;
+}
+
+
+
+.sliderView{
+  position: relative;
+  width: 700rpx;
+  margin: 0 auto;
+  height:50rpx;
+  background: #FFF;
+  box-sizing: border-box;
+  clear: both;
+}
+.left{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:650rpx;
+}
+.right{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 650rpx;
+}
+.sliderxian{
+  position: absolute;
+  top: 34rpx;
+  height: 0;
+  border: 1px solid red;
+}
+.tui-show-name{
+  clear: both
+}
+.jiagetext{
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+.jiagetext1{
+  float: left;
+  width: 60%;
+  text-align: center;
+}
+.sliderHCon {
+  height: 250rpx;
+  border: 1rpx solid red;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.MoneyValue {
+  font-size: 30rpx;
+  text-align: center;
+  color: #999;
+  margin-top: 15rpx;
+}
+
+.showMoney text {
+  margin-right: 30rpx;
+}
+
+.twoSlider {
+  width: 700rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

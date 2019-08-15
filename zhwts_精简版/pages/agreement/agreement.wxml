@@ -1,0 +1,15 @@
+<!--pages/agreement/agreement.wxml-->
+<view class='wts-background'>
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__h1" style='text-align:center;'>{{title}}</view>
+            <view class="weui-article__section">
+                <view class="weui-article__section">
+                    <view class="weui-article__p wts-font-15 wts-line-height30">
+                        {{content}}
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,71 @@
+/* pages/hotel/hotel_fill/hotel_fill.wxss */
+.minus,.add{
+  border-top:1px solid #d7d7d7;
+  border-bottom:1px solid #d7d7d7;
+}
+.minus{
+  border: none;
+  border-left:2rpx solid #d7d7d7;
+  border-top:2rpx solid #d7d7d7;
+  border-bottom:2rpx solid #d7d7d7;
+  border-top-left-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+}
+.add{
+  border: none;
+  border-right:2rpx solid #d7d7d7;
+  border-top:2rpx solid #d7d7d7;
+  border-bottom:2rpx solid #d7d7d7;
+  border-top-right-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+.hoverClass{
+  background: #b58665;
+}
+button{
+  background:#eb6100;
+}
+button[disabled][type="default"], wx-button[disabled]:not([type]) {
+color:#fff;
+background-color:#b58665;
+}
+.pay{
+  background:#CF271B;
+  color:#fff;
+  font-size:36rpx;
+  text-align: center;
+  height:100rpx;
+  line-height: 100rpx;
+  border-radius:0; 
+}
+.agree{
+  float: left;
+}
+
+.totalmoney{
+  color:#FF0000;
+  font-size:36rpx;
+  height:50rpx;
+  line-height:50rpx;
+  margin-top:10rpx;
+}
+.youmoney{
+  color:#FF9913;
+  font-size:22rpx;
+  height:30rpx;
+  line-height:30rpx;
+
+}
+.redpack{
+  /* width:10%; */
+  float:right;
+  text-align:center;
+  color:#c2c2c2;
+  font-size: 36rpx;
+}
+.graycolor{
+  color: #c2c2c2
+}
+.bluecolor{
+  color: #0A64F1;
+}

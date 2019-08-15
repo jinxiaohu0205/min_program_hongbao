@@ -1,0 +1,44 @@
+/* pages/news-hongbao/find/find.wxss */
+swiper{
+  width: 700rpx;
+  border-radius: 30rpx;
+  position: absolute;
+  left: 25rpx;
+  top: 25rpx;
+}
+swiper-item {
+  border-radius: 15rpx;
+}
+.weui-navbar__item{
+  padding: 18rpx 0;
+}
+.weui-navbar__item.weui-bar__item_on{
+  color: #CF271B;
+}
+.weui-navbar__slider{
+  width: 4em;
+  background-color: #CF271B;
+}
+.weui-navbar {
+  border-bottom:1rpx solid #e5e5e5;
+}
+.tubiao{
+  width: 36rpx;
+  height: 36rpx;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.isshow{
+  display: block
+}
+.ishide{
+  display: none
+}
+.item view:nth-child(2){
+  color: #8e8e8e !important;
+}
+.img_content image{
+  margin-right: 10rpx;
+}

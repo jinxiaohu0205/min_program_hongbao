@@ -1,0 +1,84 @@
+{
+  "pages": [
+    "pages/new/maps/maps",
+    "pages/new/find/find",
+    "pages/new/me/me_index/me_index",
+    "pages/new/search/search",
+    "pages/news-hongbao/maps/maps",
+    "pages/ma/ma",
+    "pages/new/calendar/index",
+    "pages/new/me/xia/xia",
+    "pages/new/me/app/app",
+    "pages/new/me/wenti/wenti",
+    "pages/agreement/agreement",
+    "pages/author/author",
+    "pages/new/me/women/women",
+    "pages/order/orderdetail/orderdetail",
+    "pages/order/orderdetailt/orderdetailt",
+    "pages/new/find_details/find_details",
+    "pages/new/hotel/hotelpay/hotelpay",
+    "pages/new/hotel/paysuccess/paysuccess",
+    "pages/new/me/hongbao_core/hongbao_core",
+    "pages/new/me/tisuccess/tisuccess",
+    "pages/new/me/tipay/tipay",
+    "pages/new/scenic/scenic_details/scenic_details",
+    "pages/new/scenic/scenicpay/scenicpay",
+    "pages/new/hotel/hotel_fill/hotel_fill",
+    "pages/new/hotel/hotel_intro/hotel_intro",
+    "pages/new/tui/tui",
+    "pages/new/tuidetail/tuidetail",
+    "pages/new/hbd/hbd",
+    "pages/new/me/order_list/order_list",
+    "pages/new/hotel/coupon/coupon",
+    "pages/new/hongbao_history/hongbao_history",
+    "pages/new/scenic/scenic_fill/scenic_fill",
+    "pages/new/hotel/hotel_details/hotel_details"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#0A63EE",
+    "navigationBarTitleText": "智慧五台山",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#B3B3B3",
+    "selectedColor": "#454545",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/new/maps/maps",
+        "iconPath": "pages/new/img/hb.png",
+        "selectedIconPath": "pages/new/img/hb2.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/new/find/find",
+        "iconPath": "pages/new/img/fx.png",
+        "selectedIconPath": "pages/new/img/fx2.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/new/me/me_index/me_index",
+        "iconPath": "pages/new/img/wd.png",
+        "selectedIconPath": "pages/new/img/wd2.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false,
+  "sitemapLocation": "sitemap.json"
+}

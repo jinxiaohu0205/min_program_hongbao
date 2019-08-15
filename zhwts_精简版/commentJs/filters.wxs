@@ -1,0 +1,9 @@
+// 价格过滤小数点2位
+var filters = {
+  toFix: function (value) {
+    return value.toFixed(2)//此处2为保留两位小数
+  }
+}
+module.exports = {
+  toFix: filters.toFix
+}

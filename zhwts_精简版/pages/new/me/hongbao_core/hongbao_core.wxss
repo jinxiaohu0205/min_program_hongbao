@@ -1,0 +1,110 @@
+/* pages/news-hongbao/me/hongbao_core/hongbao_core.wxss */
+page{
+  background: #EDEDED;
+}
+.tab_bar_bottom{
+  border-bottom:4rpx solid #CF271B;
+}
+.balance{
+  height: 180rpx;
+}
+.quan{
+  background-size: 100%;
+  background-repeat: repeat-x;
+}
+.order_three .iconfont{
+  text-align: center;
+  color: #0A63EE;
+  font-size: 65rpx;
+}
+.order_three .text{
+  margin-top: -20rpx;
+  color: #2D2D2D;
+}
+.moneylin{
+  width:92%;
+  padding:30rpx;
+}
+.moneytit{
+  color:#2C2C2CFF;
+  font-size:34rpx;
+  text-align:left;
+  width:100%;
+}
+.moneycon{
+  width:100%;
+  height:auto;
+}
+.moneylist{
+  height:134rpx;
+  border-top:2rpx solid #eee;
+}
+.moneylistleft{
+  width:60%;
+  float:left;
+  height:100%;
+  text-align: left;
+}
+.moneylistleft view:nth-child(1){
+  color:#2C2C2C;
+  font-size:30rpx;
+  height:60rpx;
+  line-height:60rpx;
+  margin-top:20rpx;
+}
+.moneylistleft view:nth-child(2){
+  color:#AEB0B6;
+  font-size:24rpx;
+  height:20rpx;
+  line-height:20rpx;
+}
+.moneylistright{
+  width:40%;
+  float:right;
+  height:100%;
+  line-height:134rpx;
+  font-size:40rpx;
+  color:red;
+}
+.moneylistright text{
+  float: right
+}
+.coupon{
+  width: 100%;
+  height: 236rpx;
+  position: relative;
+  border-radius:10rpx; 
+}
+.couponbig{
+  margin-bottom: 20rpx;
+  border-radius:10rpx;
+}
+.coupon_text{
+  float: left;
+  width: 440rpx;
+  margin-left: 30rpx;
+  margin-top: 25rpx;
+}
+.coupon_text view{
+  text-align: left;
+}
+.coupon_button{
+  float: left;
+  width: 190rpx;
+  margin-left:20rpx; 
+  border-left: 1px dashed #EDEDED;
+  height: 246rpx;
+}
+.coupon_button .button{
+  width: 120rpx;
+  height: 40rpx;
+  border: none;
+  background: #FFC632;
+  color: #D50F00;
+  font-size: 24rpx;
+  border-radius: 6rpx;
+  padding: 5rpx;
+  margin:0 auto; 
+  text-align: center;
+  line-height: 40rpx;
+}

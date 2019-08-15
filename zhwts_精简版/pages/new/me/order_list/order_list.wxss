@@ -1,0 +1,24 @@
+/* pages/news-hongbao/me/order_list/order_list.wxss */
+.btnshow{
+  display: block;
+}
+.btnhide{
+  display: none;
+}
+.hotelbtn{
+  width: 50%;
+  float: right;
+  height: 80rpx;
+}
+.hotelbtn button{
+  width:128rpx;
+  float:right;
+  height:48rpx;
+  font-size:24rpx;
+  line-height:48rpx;
+  color:#fff;
+  margin-top: 20rpx;
+}
+button::after {
+  border: none
+}

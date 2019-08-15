@@ -1,0 +1,47 @@
+.tibox{
+  /* width:90%; */
+  padding:40rpx;
+  height:100%;
+
+}
+.allmoney{
+  height:144rpx;
+  line-height:144rpx;
+  border-bottom:2rpx solid #eee;
+  font-size:26rpx;
+  color:#151515;
+
+}
+.allmoney text:nth-child(1){
+  color:#CF271B;
+  font-size:50rpx;
+}
+.allmoney text:nth-child(2){
+  color:#CF271B;
+}
+.inputmoney{
+  height:200rpx;
+}
+.inputmoney view{
+  height:80rpx;
+  line-height:80rpx;
+  color:#151515;
+  font-size:32rpx;
+
+}
+.inputmoney input{
+  height:80rpx;
+  border-bottom:2rpx solid #eee;
+  font-size:50rpx;
+}
+.tishi{
+  color:#969696;
+  font-size:24rpx;
+}
+button{
+  background:#CF271B;
+  color:#fff;
+  font-size:34rpx;
+  margin-top:170rpx;
+
+}

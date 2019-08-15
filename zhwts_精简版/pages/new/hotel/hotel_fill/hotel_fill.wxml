@@ -1,0 +1,126 @@
+<wxs module="filters" src="../../../../commentJs/filters.wxs"></wxs>
+<view class='container' style='padding-bottom:100rpx;'>
+  <view class='wts-padding-lr wts-box-sizing' style='height:260rpx;'>
+    <!-- <view class='wts-text-center wts-white wts-font-16 wts-line-height'>{{hotel_name}}</view> -->
+    <view class='wts-background wts-line-height wts-box-sizing' style='background:#CF271B;border-radius:10rpx;padding:20rpx 40rpx;margin-top:20rpx'>
+      <view class='wts-font-15 wts-333' style="color:#FFF;font-size:38rpx;font-weight:700">{{room_name}}</view>
+      <view class='wts-font-13 wts-666 justify-start' style='height:50rpx;line-height:50rpx;color:#FFF;'>
+        <view style='margin-right:20rpx;'>入住：{{start_date}}</view>
+        <view style='margin-right:20rpx;'>离店:{{end_date}}</view>
+      </view>
+       <view class='wts-font-13 wts-666' style='height:50rpx;line-height:50rpx;color:#FFF;'>可住{{people_count}}人 {{bed_count}}床 {{has_breakfast==1?'含早':''}} {{square}}m²</view> 
+    </view>
+  </view>
+
+  <view class='wts-box-sizing wts-background wts-line-height wts-padding-lr wts-666 wts-font-15' style='color:#323232'>
+    <view class='justify-start' style='border-bottom:1px solid #EEEEEE'>
+      <view style='width:170rpx;'>房间数</view>
+      <view class='justify-between' style='width:520rpx;'>
+        <view class=''>{{buycount}} <text class='wts-333'>间</text></view>
+        <view class='wts-text-center' style='margin:5px 0;'>
+          <view bindtap='bindMinus' class='minus wts-inline-block wts-999' style='width:50rpx;height:50rpx;line-height:50rpx;float:left;'>-</view>
+          <input class='wts-inline-block wts-white' disabled value='{{buycount}}' style='width:60rpx;height:54rpx;background:#CF271B;float:left;'></input>
+          <view bindtap='bindPlus' class='add wts-inline-block wts-999' style='width:50rpx;height:50rpx;line-height:50rpx;float:left;'>+</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='wts-box-sizing wts-background wts-line-height wts-padding-lr wts-666 wts-font-15' style='color:#323232'>
+    <view class='justify-start' style='border-bottom:1px solid #EEEEEE'>
+      <view style='width:170rpx;'>天数</view>
+      <view class='justify-between' style='width:520rpx;'>
+        <view class=''>{{day}} <text class='wts-333'>天</text></view>
+      </view>
+    </view>
+  </view>
+ 
+<!-- 入住人 --><!-- {{index+1}} -->
+  <view class='wts-box-sizing wts-background wts-padding-lr wts-666 wts-font-15 wts-margin20' style='color:#323232'>
+    <view  class='justify-start' style='border-bottom:1px solid #EEEEEE'>
+      <view class='wts-line-height' style='width:170rpx;'>入住人 </view>  
+      <view class='wts-line-height50 wts-333' style='width:520rpx;padding:15rpx 0;'>
+        <view class='wts-line-height50'>
+          <input type='text' placeholder='姓名' maxlength='10' bindinput="bindinput"  data-name='people_list.truename' data-index='{{index}}' value='{{people_list.truename}}'></input>
+        </view>
+      </view>
+    </view>
+  </view>
+
+<!-- 手机号 保留 -->
+  <view class=' wts-box-sizing wts-background wts-line-height wts-padding-lr wts-666 wts-font-15 wts-margin20' style='color:#323232;padding-bottom:20rpx;'>
+    <view class=' justify-start' style='border-bottom:#eee'>
+      <view style='width:170rpx;'>联系电话</view>
+      <view class='wts-line-height50 wts-333' style='width:520rpx;padding:15rpx 0;'>
+        <input type='number' placeholder='请输入联系电话' maxlength='11' bindinput="bindinput1" data-name='tel' value='{{tel}}' maxlength='11'></input>
+      </view>
+    </view>
+    <view class=' justify-start' style='border-top:2rpx solid #eee'>
+      <view style='width:170rpx;'>保留时间</view>
+      <view class='wts-333' style='width:520rpx;'>当天{{retentiontime}}</view>
+    </view>
+  </view>
+
+  <view class='' style='color:#7C7C7C;background:#eee;height:82rpx;line-height:82rpx;padding-left:28rpx;font-size:26rpx;'>将通过短信的方式发送验证码到您的手机</view>
+
+<!-- 发票 -->
+  <view class='wts-background flex justify-between wts-padding-lr wts-line-height wts-box-sizing wts-margin20 wts-font-15' style='color:#323232;border-bottom:6rpx solid #eee;' id='kefu' bindtap='bindCall'>
+    <view class='wts-666'>如需发票请联系客服</view>
+    <view class='iconfont icon-weibiaoti-'></view>
+  </view>
+
+<!-- 红包 -->
+  <view class='flex justify-between align-center wts-box-sizing wts-background wts-line-height wts-padding-lr wts-666 wts-font-15 wts-margin20 wts-bottom1' style='color:#323232' wx:if="{{hongbaoShow1}}">
+    <view class='wts-line-height'>使用红包优惠券</view>
+    <view class='wts-line-height' bindtap='redpack'>点击选择优惠券 ></view>
+  </view>
+  <view style='width:750rpx;padding:20rpx;box-sizing:border-box;background:#eee;position:relative' wx:if="{{hongbaoShow}}">
+    <view style='width:670rpx;background:#FFF;overflow:hidden;padding:20rpx;border-radius:10rpx;'>
+      <image src='{{hongbao.image}}' style='float:left;width:200rpx;height:160rpx;border-radius:10rpx;'></image>
+      <view style='float:left;width:240rpx;height:80rpx;margin:0 20rpx;'>                               
+        <view style='line-height:40rpx;height:40rpx;font-size:30rpx;color:#CF271B'>{{quanname}}</view>
+        <view style='line-height:40rpx;height:60rpx;margin-bottom:10rpx;font-size:24rpx;line-height:30rpx;color:#292929;overflow:hidden'>{{hongbao.suit_name}}</view>
+              <view style='color:#CF271B;height:32rpx;line-height:32rpx;width:104rpx;border:1px solid #CF271B;border-radius:16rpx;display:inline-block;font-size:24rpx;text-align:center;float:left'>优惠{{buy_limit}}间</view>
+              <view wx-if="{{house_day}}" style='color:#CF271B;height:32rpx;line-height:32rpx;width:104rpx;border:1px solid #CF271B;border-radius:16rpx;display:inline-block;margin-left:8rpx;font-size:24rpx;text-align:center;float:left'>优惠{{house_day}}天</view>
+      </view>
+      <view style='float:left;margin-left:20rpx;width:170rpx;text-align:center;'>
+        <view style='height:60rpx;'>
+          <view style='font-size:40rpx;display:inline-block;line-hight:60rpx;'>{{num}}</view>
+          <view style='font-size:20rpx;display:inline-block;line-hight:60rpx;margin-top:20rpx;'>{{detaileType}}</view>
+        </view>
+        <view style='font-size:24rpx;border-radius:10rpx;width:120rpx;margin:10rpx auto;text-align:center;height:40rpx;line-height:40rpx;color:#FFF;background:#F58604'>可使用</view>
+        <view wx-if="{{desc}}" class='wts-font-12'>{{desc}}</view>
+      </view>
+      <image src='../../img/shu.png' style='width:30rpx;height:250rpx;position:absolute;top:20rpx;left:500rpx;'></image>
+            <view style='text-align:left;width:500rpx;color:#A4A4A4;height:50rpx;margin-left:18rpx;line-height:50rpx;clear:both;font-size:24rpx;'>{{hongbaoStartTime}}至{{hongbaoEndTime}}</view>
+    </view>
+  </view>
+
+<!-- 酒店预订须知 -->
+  <view class='wts-padding-lr wts-box-sizing wts-margin20 wts-font-15 wts-margin20' style='color:#323232;background:#eee;padding-bottom:20rpx;'>
+    <view class='wts-333 wts-line-height'>酒店预订须知</view>
+    <view class=''>
+      <view class='wts-line-height30 wts-font-12' style='color:#717070'>【预订须知】</view>
+      <view class='wts-666 wts-line-height40 wts-font-10'>智慧五台山会根据您的付款方式进行订单全款扣除和预授权限定，如订单不确认将解除预授权或全额退款至您的支付账户。</view>
+      <view class='wts-line-height30 wts-font-12' style='color:#717070'>【变更/取消须知】</view>
+      <view class='wts-666 wts-line-height40 wts-font-10'>在预订当日18:00前您可免费变更/取消订单，超时变更/取消订单，酒店将扣除全额房费 ,订单是否生效以智慧五台山最终通知为准。</view>
+    </view>
+  </view>
+
+  <!-- 同意授权 -->  
+  <view class='justify-start wts-padding-lr wts-line-height wts-box-sizing wts-margin20 wts-overflow' style='color:#323232;height:100rpx;' >
+   <view class="iconfont icon-xianshi_xuanzetianchong {{is_xuanze?'#CF271B':'graycolor'}} wts-d3483a" bindtap='bindXuanze'></view>
+    <view class='wts-font-15'>
+      <text class='agree'>同意《</text>
+      <view class='wts-inline' style='width:auto;float:left' bindtap="hotelagree">酒店预订协议</view>
+      <text class='agree'>》</text>
+    </view>
+  </view>
+</view>
+<!-- 底栏 -->
+<view class='wts-100 wts-fixed wts-background justify-between wts-line-height60 wts-box-sizing wts-top' style='bottom:0;height:100rpx;z-index:9;'>
+  <view class='wts-eb6100 wts-font-17 wts-50' style='padding-left:30rpx'>
+    <view class="totalmoney">¥{{total}}<text style='font-size:24rpx;color:#666666;margin-left:10rpx;text-decoration:line-through;'> {{amount.toFixed(2)}} </text></view>
+    <view class="youmoney">已优惠 ￥{{youmoney}}</view>
+  </view>
+  <button class='pay wts-50' bindtap='bindOrder' disabled='{{false}}'>去支付</button>
+</view>

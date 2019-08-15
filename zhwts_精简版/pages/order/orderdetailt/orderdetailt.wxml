@@ -1,0 +1,44 @@
+<view class="orderdetail">
+  <view class='orderstate'>
+    <view class='orderstatetit'>
+      <icon class='iconfont icon-tianchongxing-'></icon>
+      <text>{{statevaluet}}</text>
+    </view>
+    <view class='orderstatecon'>{{statevaluecon}}</view>
+  </view>
+
+  <view class='jimess'>
+    <view class='jitit'>基本信息</view>
+    <view class='jilist'>景点名称：{{name}}</view>
+    <view class='jilist'>景点地址：{{address}}</view>
+    <view class='jilist'>景点电话：{{tel}}</view>
+  </view>
+
+  <view class='jimess'>
+    <view class='jitit'>取票人信息</view>
+    <view class='jilist'>姓　　名：{{geter_name}}</view>
+    <view class='jilist'>电　　话：{{geter_tel}}</view>
+  </view>
+
+    <view class='jimess' style='margin-bottom:200rpx'>
+      <view class='jitit'>订单信息</view>
+      <view class='jilist'>订单编号：{{ordercode}}</view>
+      <view class='jilist'>下单日期：{{createtime}}</view>
+      <view class='jilist'>订单明细：{{name}}</view>
+      <view class='minglist'>
+        <view style='padding-left:150rpx;' wx:for="{{mingxiarr}}" wx:key='item'>{{item.ticketname}}: {{item.amount}}={{item.price}}*{{item.count}}</view>
+      </view>
+      <view class='jilist'>订单状态：{{statevalue}}</view>
+      <view class='jilist'>折扣信息：{{dicounttext}}</view>
+      <view class='jilist'>备　　注：{{remark}}</view>
+      <view class='jilist' style='font-size:30rpx'>订单金额：<text style='color:#B90606'>￥{{amount}}</text></view>
+    </view>
+
+    <view class='fixbuttom' wx-if="{{state!=9||state!=8}}">
+      <button bindtap='cancelorder' wx-if="{{state==0}}" class='kuang'>取消订单</button>
+      <button bindtap='pay' wx-if="{{state==0}}">立即支付</button>
+      <button bindtap='shenqtui' wx-if="{{state==2&&enable_refund==1}}" class='kuang'>申请退款</button>
+      <button bindtap='shenqtui' wx-if="{{state==1&&enable_refund==1}}" class='kuang'>申请退款</button>
+      <button bindtap='gobuy'>继续购买</button>
+    </view>
+</view>

@@ -1,0 +1,82 @@
+
+<!--头部-->
+<view class="wts-100 wts-background wts-line-height wts-overflow wts-text-center" style='top:0;left:0;z-index:999;'>
+  <!--内容-->
+  <view class="swiper-tab wts-fixed wts-line-height wts-background justify-around wts-font-15 wts-padding-lr10 wts-box-sizing" style='height:86rpx;top:0;width:100%;z-index:999;border-bottom:10rpx solid #F3F4F8;'>
+      <view class="swiper-tab-item wts-text-center justify-center" wx:for="{{tabs}}" wx:key="index" data-index="{{index}}" bindtap="bindTab">
+        <view class='wts-line-height {{index==currentTab?"tab_bar_bottom wts-0A64F1":""}}' style="padding:0 10rpx;color:#{{index==currentTab?'282828':'000'}};">
+            {{item.title}}
+        </view>
+      </view>
+  </view>
+  <view style='height:100%;position:relative;padding-top:90rpx;display:{{currentTab==0?"block":"none"}}'>
+     <view class='balance' style='margin:30rpx 30rpx 0;'>
+        <view class='flex flex-row justify-around quan wts-padding20' style='background:#CF271B;border-radius:10rpx;margin-top:25rpx;height:167rpx;'>
+          <view class='flex flex-row align-center'>
+            <view class='wts-font-24 wts-text-center' style='width:82rpx;height:82rpx;background:#FFB800;border-radius:50%;color:#CF271B;line-height:84rpx;'>￥</view>
+            <view style='margin-left:20rpx;'>
+              <view class='wts-font-13' style='color:#FFC632;text-align:left;height:50rpx;'>当前零钱总额</view>
+              <view class='wts-font-24' style='color:#fff;'>{{linamount}}<text class='wts-font-13' decode="nbsp">&nbsp;元</text></view>
+            </view>
+          </view>
+          <view class='flex flex-row align-center'>
+            <view class='wts-font-13 wts-text-center' style='background:#FFC632;width:143rpx;height:57rpx;color:#D6160F;border-radius:10rpx;line-height:57rpx;' bindtap='shenti'>申请提现</view>
+          </view>
+        </view>
+      </view>
+      <view class='moneylin'>
+        <view class='moneytit'>零钱明细</view>
+        <view class='moneycon' wx:for="{{data_room}}" wx:key="index">
+            <view class='moneylist'>
+              <view class='moneylistleft'>
+                <view wx-if="{{item.name}}">{{item.name}}</view>
+                <view wx-if="{{!item.name}}">现金红包</view>
+                <view>{{item.time}}</view>
+              </view>
+              <view class='moneylistright' style="color:#{{item.type==5?'00C13B':'EF0000'}}">
+                <text style='color:#ccc;font-size:26rpx;margin-left:10rpx'>{{item.state}}</text>
+                <text>{{item.amount}}</text>
+                <text>{{item.type==5?'+':'-'}}</text>                
+              </view>
+            </view>
+        </view>
+      </view>
+  </view>
+  <view style='height:100%;position:relative;margin-top:90rpx;display:{{currentTab==1?"block":"none"}}'>
+    <view class="swiper-tab wts-line-height wts-background justify-around wts-font-15 wts-padding-lr10 wts-box-sizing" style='height:86rpx;position:fixed;z-index:9999;width:100%;top:92rpx'>
+          <view class="swiper-tab-item wts-text-center justify-center" wx:for="{{myquan}}" wx:key="index" data-index="{{index}}" bindtap="bindziTab" >
+            <view class=' wts-line-height {{index==ziTab?"tab_bar_bottom wts-0A64F1":""}}' style="padding:0 10rpx;color:#{{index==ziTab?'282828':'000'}};">
+                {{item.title}}
+            </view>
+          </view>
+        </view>
+        <scroll-view style='padding:30rpx;width:auto;top:40px;position:relative;margin-bottom:50rpx;background:#EDEDED' bindscrolltolower="onReachBottom" scroll-with-animation='true' scroll-y='true' enable-back-to-top='true' scroll-top='{{scroll_top}}'>
+        <image  src='../../img/fx2.png' style='display:{{display}};width: 418rpx;height: 310rpx;position:fixed;left:50%;top:50%;margin-left:-209rpx;margin-top:-155rpx;'></image>
+        <view class="couponbig swiper-tab" style='background:#FFF' wx:for="{{data_quan}}" wx:key="index">
+          <view class="coupon" style='background-image:#FFF;background-repeat:no-repeat;'>
+            <view style='position:absolute;top:-10rpx;left:480rpx;width:20rpx;height:20rpx;background:#EDEDED;border-radius:50%;'></view>
+            <view style='position:absolute;bottom:-10rpx;left:480rpx;width:20rpx;height:20rpx;background:#EDEDED;border-radius:50%;'></view>
+            <view class='coupon_text'>
+              <image src='{{item.image}}' style='width:200rpx;height:160rpx;float:left;border-radius:10rpx;margin-right:20rpx;margin-left:8rpx;'></image>
+              <view class='wts-font-18' style='color:{{item.state==2||item.state==1?"#B3B3B3":"#CF271B"}};height:60rpx;line-height:60rpx;'>{{item.quanname}}</view>
+              <view class='wts-font-13' style='color:{{item.state==2||item.state==1?"#B3B3B3":"#292929"}};height:60rpx;overflow:hidden;line-height:45rpx;white-space:nowrap'>{{item.name}}</view>
+              <view wx-if="{{item.house_day}}" style='color:{{item.state==2||item.state==1?"#B3B3B3":"#CF271B"}};height:32rpx;line-height:32rpx;width:94rpx;border:1px solid {{item.state==2||item.state==1?"#B3B3B3":"#CF271B"}};border-radius:16rpx;display:inline-block;font-size:20rpx;text-align:center;float:left'>优惠{{item.buy_limit}}间</view>
+              <view wx-if="{{item.house_day}}" style='color:{{item.state==2||item.state==1?"#B3B3B3":"#CF271B"}};height:32rpx;line-height:32rpx;width:94rpx;border:1px solid {{item.state==2||item.state==1?"#B3B3B3":"#CF271B"}};border-radius:16rpx;display:inline-block;margin-left:8rpx;font-size:20rpx;text-align:center;float:left'>优惠{{item.house_day}}天</view>
+              <view wx-if="{{!item.house_day}}" style='color:{{item.state==2||item.state==1?"#B3B3B3":"#CF271B"}};height:32rpx;line-height:32rpx;width:94rpx;border:1px solid {{item.state==2||item.state==1?"#B3B3B3":"#CF271B"}};border-radius:16rpx;display:inline-block;font-size:20rpx;text-align:center;float:left'>优惠{{item.buy_limit}}张</view>
+            </view>
+            <view class='coupon_button'>
+              <view style='font-size:34rpx;color:{{item.state==2||item.state==1?"#B3B3B3":"#CF271B"}};text-align:center;font-weight:bold;line-height:50rpx;margin-top:{{item.desc?"20rpx":"60rpx;"}}' wx:if="{{item.type==0}}">{{item.discount}}<text class='wts-font-12' style='color:{{item.state==2||item.state==1?"#B3B3B3":"#CF271B"}}'>折</text></view>
+              <view style='font-size:30rpx;color:{{item.state==2||item.state==1?"#B3B3B3":"#CF271B"}};text-align:center;line-height:50rpx;margin-top:{{item.desc?"20rpx":"60rpx;"}};' wx:if="{{item.type==1}}">{{item.money}}<text class='wts-font-12' style='color:{{item.state==2||item.state==1?"#B3B3B3":"#CF271B"}}'>元</text></view>
+              <view style='font-size:30rpx;color:{{item.state==2||item.state==1?"#B3B3B3":"#CF271B"}};text-align:center;line-height:50rpx;margin-top:{{item.desc?"20rpx":"60rpx;"}};' wx:if="{{item.type==2}}">{{item.money}}<text class='wts-font-12' style='color:{{item.state==2||item.state==1?"#B3B3B3":"#CF271B"}}'>元</text></view>
+              <view class='button wts-font-12' style='background:{{item.state==2||item.state==1?"#B3B3B3":"#FFC632"}};color:{{item.state==2||item.state==1?"#FFF":"#D50F00"}}' bindtap='shiyong' data-index='{{index}}' data-item="{{item}}">{{item.buttons}}</view>
+              <view wx-if="{{item.desc}}" class='wts-font-12'>{{item.desc}}</view>
+            </view>
+            <view style='text-align:left;width:440rpx;color:#A4A4A4;height:50rpx;margin-left:38rpx;line-height:50rpx;clear:both;position:relative;top:-70rpx;font-size:24rpx;'>{{item.starttime}}至{{item.endtime}}</view>
+          </view>
+        </view>
+        </scroll-view>
+  </view>
+</view>
+
+
+

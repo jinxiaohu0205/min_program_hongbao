@@ -1,0 +1,6 @@
+<view class="tisuccess">
+  <view class='tiimg iconfont icon-xianshi_xuanzetianchong'></view>
+  <view class='ti'>提现申请成功</view>
+  <view class="notice">提现金额会在1个工作日内充值到您的微信钱包中</view>
+  <button bindtap='backindex'>回首页</button>
+</view>

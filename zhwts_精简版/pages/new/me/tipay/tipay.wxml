@@ -1,0 +1,12 @@
+<view class="tibox">
+  <view class='allmoney'>
+    当前您的零钱总额为<text>{{amount}}</text><text>元</text>
+  </view>
+  <view class='inputmoney'>
+    <view>请输入提现金额</view>
+    <input value='{{val}}' bindinput='bindinput' type='text'></input>
+  </view>
+  <view class='tishi'>最低提现额度不少于{{minmoney}}元，提现金额会在1个工作日内充值到您
+的微信钱包中。</view>
+  <button bindtap='suretap' disabled='{{disable}}'>确认提交</button>
+</view>

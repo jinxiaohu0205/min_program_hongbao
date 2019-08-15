@@ -1,0 +1,7 @@
+@import "../../../wxParse/wxParse.wxss";
+.contenter view{
+  width: 100%;
+}
+.contenter text:nth-child(1){
+  display: none;
+}

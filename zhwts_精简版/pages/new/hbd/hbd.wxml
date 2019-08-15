@@ -1,0 +1,64 @@
+<!--pages/news-hongbao/hongbao_details/hongbao_details.wxml-->
+<view>
+  <view class='redpackage'>
+    <!-- 内容 -->
+    <view class='content' style='background:#FFEEDB;position:relative;height:890rpx;'>
+      <image class='top_back' src='../img/hongback.png'></image>
+      <view class='top_section'>
+        <image class='headimg' src='{{image}}' style='z-index:1000000'></image>
+        <view class='hotel_name wts-font-15' style='color:#212121;'>{{name}}红包</view>
+        <view class='hotel_name wts-font-45' style='color:#D50F00;'>{{red_money}}<text class='wts-font-15'>元</text></view>
+        <view class='hotel_name wts-font-12' style='color:#D50F00;' bindtap='mylin'>已存入<text style='color:#bf7500;text-decoration: underline;'>钱包</text>，可提现</view>
+        <view class='coupon'>
+        <view class='yin1'></view>
+        <view class='yin2'></view>
+          <image class='coupon_img' src='{{image}}'></image>
+          <view class='coupon_text'>
+            <view class='wts-font-15' style='color:#CF271B;line-height:40rpx;'>{{quan}}</view>
+            <view class='wts-font-12' style='color:#292929;margin-top:10rpx;min-height:72rpx;overflow:hidden; max-height:72rpx;line-height:36rpx;'>{{suit_name}}</view>
+            <view wx-if="{{item.house_day}}" style='color:#CF271B;height:32rpx;line-height:32rpx;width:94rpx;border:1px solid #CF271B;border-radius:16rpx;display:inline-block;font-size:20rpx;text-align:center;float:left'>优惠{{buy_limit}}间</view>
+              <view wx-if="{{item.house_day}}" style='color:#CF271B;height:32rpx;line-height:32rpx;width:94rpx;border:1px solid #CF271B;border-radius:16rpx;display:inline-block;margin-left:8rpx;font-size:20rpx;text-align:center;float:left'>优惠{{house_day}}天</view>
+              <view wx-if="{{!item.house_day}}" style='color:#CF271B;height:32rpx;line-height:32rpx;width:94rpx;border:1px solid #CF271B;border-radius:16rpx;display:inline-block;font-size:20rpx;text-align:center;float:left'>优惠{{buy_limit}}张</view>
+          </view>
+          <view class='coupon_button'>
+            <view style='font-size:40rpx;color:#CF271B;line-height:50rpx;font-weight:bold;margin-top:{{item.desc?"10rpx":"40rpx;"}}'>{{discount}}<text class='wts-font-12' style='color:#CF271B'>{{detaileType}}</text></view>
+            <view class='button wts-font-12' bindtap='shiyong'>立即使用</view>
+              <view wx-if="{{item.desc}}" class='wts-font-12'>{{desc}}</view>
+          </view>
+        </view>
+          <view style='text-align:left;width:440rpx;color:#A4A4A4;height:50rpx;margin-left:48rpx;line-height:50rpx;clear:both;position:relative;top:-60rpx;font-size:24rpx;'>{{starttime}}至{{endtime}}</view>
+      </view>
+      <audio poster='true' src='{{src}}' id='myAudio' loop=''></audio>
+    </view>
+    <!-- 领取人数 -->
+    <view class='rece'>
+      <view class='number flex flex-row'>
+        <text class='wts-text-center wts-font-15' style='color:#121212;margin-right:70rpx;'>有{{count}}人领取</text>
+        <navigator class='button wts-font-12 flex flex-row align-center' url='../hongbao_history/hongbao_history?red_envelope_id={{red_envelope_id}}' hover-class="none">
+          <view class='user_img ' bindtap='hong_history' wx:for='{{receive_list}}' wx:key='index'>
+            <image src='{{item.headimgurl}}'></image>
+          </view>
+          <text class='iconfont icon-jiantou' style='color:#838383;margin-left:20rpx;'></text>
+        </navigator>
+      </view>
+    </view>
+    <!-- 评论列表 -->
+    <view class='comment_list'>
+      <view class='conmment_item flex' wx:for='{{red_message}}' wx:key="{{index}}" >
+        <image class='usimg' src='{{item.headimgurl}}'></image>
+        <view class='rights'>
+          <view class='wts-font-12 flex flex-row justify-between align-center' style='color:#6b6b6b;'>
+            <view class='wts-font-15' style='color:#0D0D0D;'>{{item.nickname}}</view>
+            <text class='wts-font-12 justify-between align-center' style='color:#6b6b6b;margin-right:25rpx;'>{{item.create_time}}</text>
+          </view>
+          <view class='conmment_content wts-font-12' style='color:#898989' >{{item.content}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 评论框 -->
+    <view class='comm_box flex' style='position:fixed;left:0;bottom:0;background:#fff;'>
+      <input  placeholder='输入评论' bindinput='contents' value='{{val}}'></input>
+      <view class='btn' bindtap='subm' disabled='{{disable}}'>提交</view>
+    </view>
+  </view>
+</view>

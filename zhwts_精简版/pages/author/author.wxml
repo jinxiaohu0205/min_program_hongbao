@@ -1,0 +1,9 @@
+<view>
+  <view class='avatar'>
+    <image src='../new/img/zhwts_logo.png'></image>
+  </view>
+  <view class='gettit'>申请获取以下权限</view>
+  <view class='getmess1'>本小程序将获得您的公开信息</view>
+  <view class='getmess2'>(昵称，头像，手机号等)</view>
+  <button wx:if="{{canIUse}}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo" class='shou'>授权登录</button>
+</view>

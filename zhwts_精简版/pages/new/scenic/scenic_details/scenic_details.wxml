@@ -1,0 +1,50 @@
+<!-- 引入模板 -->
+<import src="../../../../wxParse/wxParse.wxml"/>
+<view class='container'>
+  <!--头部-->
+  <view class='wts-relative' style='height: 370rpx;'>
+    <image class='wts-100 wts-height' mode='aspectFill' src='{{image}}'></image>
+    <view class=" wts-line-height wts-overflow wts-absolute wts-padding-lr10 flex justify-between" style="bottom:0;left:0;z-index:999">
+      <view class="wts-font-13" style="color:#fff">{{name}}</view>
+    </view>
+  </view>
+  <!--列表-->
+  <view class="wts-background wts-padding-lr10 wts-line-height flex flex-row justify-between wts-bottom" style='border-bottom:2rpx solid #F3F4F8'>
+      <view class="flex-row justify-between wts-181818 wts-font-13 align-center">
+        <image style='width:26rpx;height:39rpx;' src='../../img/dingwe1.png'></image>
+        <view style='margin-left:8rpx;margin-top:2rpx;'>{{address}}</view>
+      </view>
+      <view class="flex-row justify-between wts-181818 wts-font-13 align-center">
+        <image style='width:39rpx;height:39rpx;' src='../../img/shijian.png'></image>
+        <view style='margin-left:6rpx;margin-top:2rpx;'>开放时间：{{open_time}}</view>
+      </view>
+  </view>
+  <view class='tickets' style='padding:0 20rpx;'>
+   <!-- <view class='wts-font-16 wts-padding-10' style='color:#181818;'>门票</view> -->
+    <view class='wts-padding-10' wx:for="{{carts}}" wx:key="cid">
+      <view class='flex flex-row justify-between'>
+        <view class='flex flex-row align-center'>
+          <view class='wts-font-14' style='color:#181818;margin-right:5rpx;'>{{item.name}}</view>
+          <view class='wts-font-10' wx-if="{{item.red_envelope=='1'}}" style='width:132rpx;height:34rpx;color:#FF6D5D;background:#FFB2A9;text-align:center;border-radius:20rpx;line-height:34rpx;margin-top:5rpx;'>有可使用红包</view>
+          <view class='wts-font-10' wx-if="{{item.red_envelope=='2'}}" style='width:192rpx;height:34rpx;color:#FF6D5D;background:#FFB2A9;text-align:center;border-radius:20rpx;line-height:34rpx;margin-top:5rpx;'>直接使用已选择红包</view>      
+        </view>
+        <view class='flex flex-row align-center'>
+          <view class='wts-font-15' style='color:#FF0000;margin-right:15rpx;'>￥{{item.price}}</view>
+          <view style='width:93rpx;height:51rpx;line-height:51rpx;text-align:center;color:{{item.enable==0?"#FFF":"#CF271B"}};font-size:30rpx;background:{{item.enable==0?"#dcdcdc":"#FFF"}};border:{{item.enable==0?"none":"1px solid #F18C85"}};border-radius:10rpx;padding:0' bindtap="res" id="{{index}}" disabled="{{item.enable==0?'true':''}}">预订</view> 
+        </view>
+      </view>
+    </view> 
+  </view> 
+    <!--内容-->
+    <view class='' style='background:#f3f4f8;height:10rpx;margin-top:10rpx;'></view>
+    <view class=" wts-line-height wts-background justify-around wts-font-15 wts-padding-lr10 wts-box-sizing">
+        <view class="wts-text-center justify-center" wx:for="{{scenictext}}" wx:key="index" data-index="{{index}}" bindtap="bindTab">
+          <view class='wts-line-height {{index==tab_index?"tab_bar_bottom wts-0A64F1":""}}' style='padding:0 10rpx;color:#282828;'>
+              {{item.title}}
+          </view>
+        </view>
+    </view>
+    <view class="wts-background wts-box-sizing contenter" style="line-height:50rpx;padding:30rpx;">
+      <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+    </view>
+</view>

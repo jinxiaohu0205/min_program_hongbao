@@ -1,0 +1,27 @@
+<view class="couponbox">
+  <view class="couponbig {{showview?'showshow':'showhide'}}">
+      <view class="coupon" style='background:#FFF;border-radius:10rpx;' wx:for="{{all_coupon}}" wx:key="index">
+        <view class='coupon_text'>
+              <image src='{{item.image}}' style='width:200rpx;height:160rpx;float:left;margin-right:20rpx'></image>
+              <view class='wts-font-18' style='color:#CF271B;height:60rpx;line-height:60rpx;'>{{item.typename}}</view>
+              <view class='wts-font-13' style='color:#292929;height:60rpx;line-height:45rpx;'>{{item.name}}</view>
+              <view wx-if="{{item.house_day}}" style='color:#CF271B;height:32rpx;line-height:32rpx;width:94rpx;border:1px solid #CF271B;border-radius:16rpx;display:inline-block;font-size:20rpx;text-align:center;float:left'>优惠{{item.buy_limit}}间</view>
+              <view wx-if="{{item.house_day}}" style='color:#CF271B;height:32rpx;line-height:32rpx;width:94rpx;border:1px solid #CF271B;border-radius:16rpx;display:inline-block;margin-left:8rpx;font-size:20rpx;text-align:center;float:left'>优惠{{item.house_day}}天</view>
+              <view wx-if="{{!item.house_day}}" style='color:#CF271B;height:32rpx;line-height:32rpx;width:94rpx;border:1px solid #CF271B;border-radius:16rpx;display:inline-block;font-size:20rpx;text-align:center;float:left'>优惠{{item.buy_limit}}张</view>
+        </view>
+        <view class='coupon_button' style='border-left:1px dashed #EDEDED;'>
+          <view style='font-size:30rpx;color:#CF271B;text-align:center;line-height:50rpx;margin-top:{{item.desc?"20rpx":"60rpx;"}}' wx:if="{{item.type==0}}">{{item.discount}}<text class='wts-font-12' style='color:#CF271B'>折</text></view>
+              <view style='font-size:30rpx;color:#CF271B;text-align:center;line-height:50rpx;margin-top:{{item.desc?"20rpx":"60rpx;"}};' wx:if="{{item.type==1}}">{{item.money}}<text class='wts-font-12' style='color:#CF271B'>元</text></view>
+              <view style='font-size:30rpx;color:#CF271B;text-align:center;line-height:50rpx;margin-top:{{item.desc?"20rpx":"60rpx;"}};' wx:if="{{item.type==2}}">{{item.money}}<text class='wts-font-12' style='color:#CF271B'>元</text></view>
+          <view class='button wts-font-12' style='color:#FFF' style='margin:0 auto' bindtap='shiyong' data-id="{{item.id}}" data-index='{{index}}' data-item="{{item}}">立即使用</view>
+          <view wx-if="{{item.desc}}" style='text-align:center;' class='wts-font-12'>{{item.desc}}</view>
+        </view>
+            <view style='text-align:left;width:500rpx;color:#A4A4A4;height:50rpx;margin-left:18rpx;line-height:50rpx;clear:both;position:relative;top:-60rpx;font-size:24rpx;'>{{item.starttime}}至{{item.endtime}}</view>
+      </view>
+  </view> 
+  
+
+
+  <view class="nocoupon couponlist {{showview?'showhide':'showshow'}}">当前没有可用的优惠券</view>
+  <!-- <button style='width:50%;margin-top:40rpx;background:#1563DD' bindtap='surecoupon'>确定</button> -->
+</view>

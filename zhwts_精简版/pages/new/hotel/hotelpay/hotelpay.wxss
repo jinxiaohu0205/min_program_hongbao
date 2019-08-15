@@ -1,0 +1,63 @@
+page{
+  height: 100%;
+}
+.orderpay{
+  width:100%;
+  min-height:100%;
+  background:#F3F4F8;
+  position:relative;
+}
+.orderdetail{
+  width:90%;
+  margin:0 auto;
+  background:#fff;
+  padding: 20rpx;
+  box-sizing: border-box;
+  border-radius:10rpx;
+}
+.paytime{
+  width:100%;
+  text-align:center;
+  line-height:80rpx;
+  font-size:24rpx;
+  color:#151515;
+  padding-top:20rpx;
+}
+.paymoney{
+  font-size:58rpx;
+  color:#EF0C0C;
+  text-align:center;
+  width:100%;
+  line-height:60rpx;
+  margin-bottom:20rpx;
+}
+.paymess{
+  text-align:center;
+  line-height:40rpx;
+  width:100%;
+  font-size:24rpx;
+  color:#444444;
+}
+.paymess text{
+  color: orange;
+}
+.notice{
+  text-align: center;
+  color: #ADAFB6;
+  font-size: 24rpx;
+  margin-top:30rpx; 
+  width:100%;
+}
+.pay{
+  width:90%;
+  position:fixed;
+  bottom:146rpx;
+  left:5%;
+  font-size:30rpx;
+  color:#fff;
+  background:#CF271B;
+  text-align:center;
+  height:94rpx;
+  line-height:94rpx;
+  border-radius: 10rpx;
+}

@@ -1,0 +1,7 @@
+<!--pages/news-hongbao/me/wenti/wenti.wxml-->
+<view style='padding:30rpx;'>
+  <view wx:for="{{arr}}" wx:key="index">
+    <view class='head'>{{item.title}}</view>
+    <rich-text nodes="{{item.desc}}"></rich-text>
+  </view>
+</view>

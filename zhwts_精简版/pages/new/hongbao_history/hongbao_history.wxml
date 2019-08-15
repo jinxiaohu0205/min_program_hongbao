@@ -1,0 +1,23 @@
+<!--pages/news-hongbao/hongbao_history/hongbao_history.wxml-->
+<view class='box'>
+  <view class='redb' style='background-image:url(../img/hongbao.png);background-repeat:no-repeat;'>
+    <!-- <image src='../img/more.png'></image> -->
+    <view style='padding:40rpx 100rpx;'>
+      <view class='bus' style='background-image:url({{image}});background-repeat:no-repeat;'></view>
+      <view class='wts-font-15' style='color:#fff;text-align:center;'>{{name}}的红包</view>
+      <view class='wts-font-17' style='color:#FFBB0A;text-align:center;'>已领取{{count}}份</view>
+    </view>
+  </view>
+  <view class='comment_list'>
+    <view class='conmment_item' wx:for='{{red_message}}' wx:key='index'>
+      <image class='usimg' src='{{item.headimgurl}}'></image>
+      <view class='rights'>
+        <view class='wts-font-15' style='color:#0D0D0D;height:48rpx;width:450rpx;overflow:hidden;'>{{item.nickname}}</view>
+        <view class='wts-font-12' style='color:#6b6b6b;height:40rpx;'>
+          <text class='wts-font-12' style='color:#6b6b6b;margin-right:25rpx;'>{{item.create_time}}</text>
+        </view>
+      </view>
+      <view class='rights conmment_content wts-font-15' style='color:#D50F00'>{{item.red_money}}元</view>
+    </view>
+  </view>
+</view>

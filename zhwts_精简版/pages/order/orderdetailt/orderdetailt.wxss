@@ -1,0 +1,101 @@
+.orderdetail{
+  height:100%;
+  width:100%;
+  background: #F3F4F8;
+}
+.orderstate{
+  height:210rpx;
+  background:#CF271B;
+  color:#fff;
+  padding-top:40rpx;
+}
+.orderstatetit{
+  height:100rpx;
+  line-height:100rpx;
+  text-align:center;
+}
+.orderstatetit icon{
+  font-size:60rpx;
+  margin-right:20rpx;
+  margin-top:-10rpx;
+
+}
+.orderstatetit text{
+  font-size:40rpx;
+}
+.orderstatecon{
+  font-size:24rpx;
+  color:#FFF;
+  width:100%;
+  text-align:center;
+}
+.jimess{
+  width:83%;
+  margin:0 auto;
+  /* height:234rpx; */
+  background:#fff;
+  margin-top:30rpx;
+  padding:34rpx;
+
+}
+.jitit{
+  height:60rpx;
+  line-height:60rpx;
+  color:#CF271B;
+  font-size:32rpx;
+
+}
+.jilist{
+  color:#6B6B6B;
+  font-size:26rpx;
+  height:50rpx;
+  line-height:50rpx;
+
+}
+.minglist{
+  color:#6B6B6B;
+  font-size:26rpx;
+  line-height:50rpx;
+
+}
+.fixbuttom{
+  height:116rpx;
+  width:100%;
+  position:fixed;
+  bottom:0;
+  background:#fff;
+}
+.fixbuttom view{
+  width:30%;
+  float:left;
+  font-size:34rpx;
+  color:#333333;
+  margin-left:40rpx;
+  height:116rpx;
+  line-height:116rpx;
+
+}
+.fixbuttom text{
+  color: red
+}
+.kuang{
+  background: none;
+  border: 1px solid #666;
+  color: #666
+}
+.pin{
+  background: #FE9500;
+}
+button{
+  background:#CF271B;
+  width:162rpx;
+  height:64rpx;
+  color:#fff;
+  font-size:28rpx;
+  float:right;
+  margin-right:40rpx;
+  margin-top:30rpx;
+  padding:0;
+  line-height:64rpx;
+
+}
